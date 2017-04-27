@@ -1,9 +1,15 @@
+// @flow
+
 import React from 'react'
 
 import Banner from './Banner'
 import MainView from './MainView'
 
-const Home = ({ appName }) =>
+type Props = {
+  appName: string,
+}
+
+const Home = ({ appName }: Proprs) =>
   <div className="home-page">
     <Banner appName={appName} />
 

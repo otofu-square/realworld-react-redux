@@ -1,4 +1,10 @@
+// @flow
+
 import React from 'react'
+
+type Props = {
+  appName: string,
+}
 
 const Banner = ({ appName }) =>
   <div className="banner">

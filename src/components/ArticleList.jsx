@@ -1,6 +1,12 @@
+// @flow
+
 import React from 'react'
 
-const ArticleList = ({ articles }) => {
+type Props = {
+  articles: Array,
+}
+
+const ArticleList = ({ articles }: Props) => {
   if (!articles) {
     return (
       <div className="article-preview">

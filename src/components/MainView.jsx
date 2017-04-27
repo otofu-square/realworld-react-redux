@@ -1,8 +1,14 @@
+// @flow
+
 import React from 'react'
 
 import ArticleList from './ArticleList'
 
-const MainView = ({ articles }) =>
+type Props = {
+  articles: Array
+}
+
+const MainView = ({ articles }: Props) =>
   <div className="col-md-9">
     <div className="feed-toggle">
       <ul className="nav nav-pills outline-active">
