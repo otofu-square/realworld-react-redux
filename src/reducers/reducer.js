@@ -1,7 +1,5 @@
 // @flow
 
-import { TOGGLE } from '../actions/action'
-
 type State = {
   appName: string,
   atricles: null
