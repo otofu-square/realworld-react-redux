@@ -1,22 +1,17 @@
 // @flow
 
-import { TOGGLE } from '../actions/action'
-
 type State = {
-  checked: boolean,
+  appName: string,
+  atricles: null
 }
 
 const defaultState = {
-  checked: false
+  appName: 'CONDUIT',
+  articles: null,
 }
 
 const reducer = (state: State = defaultState, action) => {
-  switch (action.type) {
-    case TOGGLE:
-      return { ...state, checked: !state.checked }
-    default:
-      return state
-  }
+  return state
 }
 
 export default reducer
