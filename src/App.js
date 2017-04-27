@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
 import { createStore } from 'redux'
 
-const defaultState = { checked: false }
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case 'TOGGLE':
-      return { ...state, checked: !state.checked }
-    default:
-      return state
-  }
-}
+import { toggle } from './actions/action'
+import reducer from './reducers/reducer'
+
 const store = createStore(reducer)
 
 class App extends Component {
@@ -31,7 +25,7 @@ class App extends Component {
           <input
             type="checkbox"
             checked={!!this.state.checked}
-            onClick={() => store.dispatch({ checked: true, type: 'TOGGLE'})}
+            onClick={() => store.dispatch(toggle())}
           />
         </div>
         {this.state.checked ? (<h2>Done!</h2>) : null}
