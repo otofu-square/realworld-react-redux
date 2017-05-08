@@ -10,6 +10,11 @@ const defaultState = {
   articles: null,
 }
 
-const reducer = (state: State = defaultState, action) => state
+const reducer = (state: State = defaultState, action: { type: string, paylaod: any }) => {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
 
 export default reducer
