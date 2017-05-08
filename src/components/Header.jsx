@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Header = ({ appName }) =>
+type Props = {
+  appName: string,
+}
+
+const Header = ({ appName }: Props) => (
   <div>
     <nav className="navbar navbar-light">
       <div className="container">
@@ -10,5 +14,6 @@ const Header = ({ appName }) =>
       </div>
     </nav>
   </div>
+)
 
 export default Header

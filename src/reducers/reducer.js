@@ -2,7 +2,7 @@
 
 type State = {
   appName: string,
-  atricles: null
+  atricles: null,
 }
 
 const defaultState = {
@@ -10,8 +10,6 @@ const defaultState = {
   articles: null,
 }
 
-const reducer = (state: State = defaultState, action) => {
-  return state
-}
+const reducer = (state: State = defaultState, action) => state
 
 export default reducer

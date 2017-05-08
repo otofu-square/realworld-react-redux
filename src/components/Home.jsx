@@ -1,9 +1,13 @@
 import React from 'react'
 
 import Banner from './Banner'
-import MainView from './MainView'
+import MainView from '../containers/MainView'
 
-const Home = ({ appName }) =>
+type Props = {
+  appName: string,
+}
+
+const Home = ({ appName }: Props) => (
   <div className="home-page">
     <Banner appName={appName} />
 
@@ -19,5 +23,6 @@ const Home = ({ appName }) =>
       </div>
     </div>
   </div>
+)
 
 export default Home

@@ -1,6 +1,12 @@
+// @flow
+
 import React from 'react'
 
-const ArticleList = ({ articles }) => {
+type Props = {
+  articles: Object,
+}
+
+const ArticleList = ({ articles }: Props) => {
   if (!articles) {
     return (
       <div className="article-preview">
@@ -19,9 +25,7 @@ const ArticleList = ({ articles }) => {
 
   return (
     <div>
-      {articles.map(article => (
-        <h2>{article.title}</h2>
-      ))}
+      {articles.map(article => <h2>{article.title}</h2>)}
     </div>
   )
 }

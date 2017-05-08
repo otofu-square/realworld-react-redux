@@ -1,7 +1,7 @@
 {
   "extends": [
-    "airbnb",
-    "react-app"
+    "react-app",
+    "airbnb"
   ],
   "rules": {
     "semi": [2, "never"]
