@@ -6,7 +6,10 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-immutable": "^1.0.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
