@@ -1,22 +1,19 @@
-import React from 'react'
-import { connect } from 'react-redux'
+// @flow
 
-import Header from './components/Header'
-import Home from './containers/Home'
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-type Props = {
-  appName: string,
-}
-
-const mapStateToProps = state => ({
-  appName: state.appName,
-})
-
-const App = ({ appName }: Props) => (
-  <div>
-    <Header appName={appName} />
-    <Home />
+const App = () => (
+  <div className="App">
+    <div className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h2>Welcome to React</h2>
+    </div>
+    <p className="App-intro">
+      To get started, edit <code>src/App.js</code> and save to reload.
+    </p>
   </div>
-)
+);
 
-export default connect(mapStateToProps, () => ({}))(App)
+export default App;

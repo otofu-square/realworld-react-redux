@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "react-app",
-    "airbnb"
-  ],
-  "rules": {
-    "semi": [2, "never"]
-  }
-}
