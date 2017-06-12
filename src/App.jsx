@@ -2,10 +2,13 @@
 
 import React from 'react';
 
-const App = () => (
+import Button from './containers/Button';
+import Checkbox from './containers/Checkbox';
+
+const App = () =>
   <div>
-    <h1>Hello World!!</h1>
-  </div>
-);
+    <Button />
+    <Checkbox />
+  </div>;
 
 export default App;
