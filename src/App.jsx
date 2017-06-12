@@ -3,6 +3,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Header from './components/Header';
+
 const mapStateToProps = state => ({ appName: state.appName });
 const mapDispatchToProps = () => ({});
 
@@ -12,7 +14,7 @@ type Props = {
 
 const App = ({ appName }: Props) =>
   <div>
-    {appName}
+    <Header appName={appName} />
   </div>;
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
