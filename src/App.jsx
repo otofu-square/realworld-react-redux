@@ -1,14 +1,18 @@
 // @flow
 
 import React from 'react';
+import { connect } from 'react-redux';
 
-import Button from './containers/Button';
-import Checkbox from './containers/Checkbox';
+const mapStateToProps = state => ({ appName: state.appName });
+const mapDispatchToProps = () => ({});
 
-const App = () =>
+type Props = {
+  appName: string,
+};
+
+const App = ({ appName }: Props) =>
   <div>
-    <Button />
-    <Checkbox />
+    {appName}
   </div>;
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
