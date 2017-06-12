@@ -29,5 +29,6 @@ module.exports = {
     'react/require-default-props': 0,
     'react/no-array-index-key': 1,
     'react/prop-types': 0,
+    'react/jsx-wrap-multilines': 0,
   },
 };
