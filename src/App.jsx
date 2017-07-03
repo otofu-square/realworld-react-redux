@@ -1,13 +1,9 @@
 // @flow
 
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Header from './components/Header';
-import Home from './components/Home';
-
-const mapStateToProps = state => ({ appName: state.appName });
-const mapDispatchToProps = () => ({});
+import Home from './containers/Home';
 
 type Props = {
   appName: string,
@@ -19,4 +15,4 @@ const App = ({ appName }: Props) =>
     <Home appName={appName} />
   </div>;
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
