@@ -13,7 +13,11 @@ const ArticleList = ({ articles }: Props) => {
   }
   return (
     <div>
-      {articles.map(article => <h2>{article.title}</h2>)}
+      {articles.map(article =>
+        <h2>
+          {article.title}
+        </h2>,
+      )}
     </div>
   );
 };
