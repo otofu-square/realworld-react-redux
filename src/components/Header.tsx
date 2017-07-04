@@ -1,10 +1,8 @@
-// @flow
+import * as React from 'react';
 
-import React from 'react';
-
-type Props = {
-  appName: string,
-};
+interface Props {
+  appName: string;
+}
 
 const Header = ({ appName }: Props) =>
   <nav className="navbar navbar-light">
