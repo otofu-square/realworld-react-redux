@@ -20,5 +20,8 @@
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
   },
-  "scripts": {}
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  }
 }
