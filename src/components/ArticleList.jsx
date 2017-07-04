@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import ArticlePreview from './ArticlePreview';
+
 type Props = {
   articles: Array,
 };
@@ -13,11 +15,7 @@ const ArticleList = ({ articles }: Props) => {
   }
   return (
     <div>
-      {articles.map(article =>
-        <h2>
-          {article.title}
-        </h2>,
-      )}
+      {articles.map(article => <ArticlePreview article={article} key={article.slug} />)}
     </div>
   );
 };
