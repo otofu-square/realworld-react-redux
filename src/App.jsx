@@ -5,14 +5,10 @@ import React from 'react';
 import Header from './components/Header';
 import Home from './containers/Home';
 
-type Props = {
-  appName: string,
-};
-
-const App = ({ appName }: Props) =>
+const App = () =>
   <div>
-    <Header appName={appName} />
-    <Home appName={appName} />
+    <Header appName={'Conduit'} />
+    <Home />
   </div>;
 
 export default App;
