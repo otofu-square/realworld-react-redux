@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-// import ArticleList from '../containers/ArticleList';
+import ArticleList from '../containers/ArticleList';
 
 const MainView = () =>
   <div className="col-md-9">
@@ -13,7 +13,7 @@ const MainView = () =>
         </li>
       </ul>
     </div>
-    {/*<ArticleList />*/}
+    <ArticleList />
   </div>;
 
 export default MainView;

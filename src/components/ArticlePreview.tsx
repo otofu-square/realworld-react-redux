@@ -1,12 +1,12 @@
-// @flow
+import * as React from 'react';
 
-import React from 'react';
+import { Article } from '../models/article';
 
-type Props = {
-  article: Object,
-};
+interface Props {
+  article: Article;
+}
 
-const ArticleList = ({ article }: Props) =>
+const ArticleList: React.StatelessComponent<Props> = ({ article }) =>
   <div className="article-preview">
     <div className="article-meta">
       <a href="">
@@ -26,8 +26,7 @@ const ArticleList = ({ article }: Props) =>
         </button>
       </div>
     </div>
-
-    <a to={`article/${article.slug}`} className="preview-link">
+    <a href={`article/${article.slug}`} className="preview-link">
       <h1>
         {article.title}
       </h1>
@@ -36,11 +35,11 @@ const ArticleList = ({ article }: Props) =>
       </p>
       <span>Read more...</span>
       <ul className="tag-list">
-        {article.tagList.map(tag => (
+        {article.tagList.map(tag =>
           <li className="tag-default tag-pill tag-outline" key={tag}>
             {tag}
-          </li>
-          ))}
+          </li>,
+        )}
       </ul>
     </a>
   </div>;
