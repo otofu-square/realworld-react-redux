@@ -4,7 +4,7 @@ interface Props {
   appName: string;
 }
 
-const Banner = ({ appName }: Props) =>
+const Banner: React.StatelessComponent<Props> = ({ appName }) =>
   <div className="banner">
     <div className="container">
       <h1 className="logo-font">

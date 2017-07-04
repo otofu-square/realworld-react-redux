@@ -7,7 +7,7 @@ interface Props {
   appName: string;
 }
 
-const Home = ({ appName }: Props) =>
+const Home: React.StatelessComponent<Props> = ({ appName }: Props) =>
   <div className="home-page">
     <Banner appName={appName} />
     <div className="container page">

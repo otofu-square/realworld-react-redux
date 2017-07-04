@@ -4,7 +4,7 @@ interface Props {
   appName: string;
 }
 
-const Header = ({ appName }: Props) =>
+const Header: React.StatelessComponent<Props> = ({ appName }) =>
   <nav className="navbar navbar-light">
     <div className="container">
       <a className="navbar-brand">
