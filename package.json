@@ -2,9 +2,8 @@
   "name": "hoge",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-immutable": "^1.0.0",
+  "dependencies": {},
+  "devDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
@@ -13,19 +12,5 @@
     "redux-actions": "^2.0.3",
     "redux-thunk": "^2.2.0"
   },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.44.2",
-    "react-scripts": "1.0.7"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+  "scripts": {}
 }
