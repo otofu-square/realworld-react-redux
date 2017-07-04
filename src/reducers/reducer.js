@@ -1,6 +1,10 @@
 // @flow
 
-import { HOME_PAGE_LOADED } from '../actions/home';
+import {
+  FETCH_POSTS_REQUEST,
+  FETCH_POSTS_FAILURE,
+  FETCH_POSTS_SUCCESS,
+} from '../actions/articleList';
 
 const initialState = {
   appName: 'Conduit',
@@ -9,8 +13,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case HOME_PAGE_LOADED:
-      return { ...state, articles: action.payload };
+    case FETCH_POSTS_REQUEST:
+      return state;
+    case FETCH_POSTS_FAILURE:
+      return state;
+    case FETCH_POSTS_SUCCESS:
+      return { ...state, articles: action.payload.articles };
     default:
       return state;
   }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import ArticleList from './ArticleList';
+import ArticleList from '../containers/ArticleList';
 
 const MainView = () =>
   <div className="col-md-9">
