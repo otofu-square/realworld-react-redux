@@ -1,10 +1,8 @@
-// @flow
-
-import React from 'react';
+import * as React from 'react';
 
 import ArticleList from '../containers/ArticleList';
 
-const MainView = () =>
+const MainView: React.StatelessComponent = () =>
   <div className="col-md-9">
     <div className="feed-toggle">
       <ul className="nav nav-pills outline-active">

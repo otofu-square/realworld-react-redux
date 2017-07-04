@@ -1,15 +1,13 @@
-// @flow
-
-import React from 'react';
+import * as React from 'react';
 
 import Banner from '../components/Banner';
 import MainView from '../components/MainView';
 
-type Props = {
-  appName: string,
-};
+interface Props {
+  appName: string;
+}
 
-const Home = ({ appName }: Props) =>
+const Home: React.StatelessComponent<Props> = ({ appName }: Props) =>
   <div className="home-page">
     <Banner appName={appName} />
     <div className="container page">

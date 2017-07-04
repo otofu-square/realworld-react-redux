@@ -1,31 +1,32 @@
 {
   "name": "hoge",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-immutable": "^1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.0.7",
+    "@types/react": "^15.0.34",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-redux": "^4.4.45",
+    "@types/recompose": "^0.23.1",
+    "@types/redux-actions": "^1.2.6",
+    "awesome-typescript-loader": "^3.2.1",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "recompose": "^0.23.5",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.3",
-    "redux-thunk": "^2.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.44.2",
-    "react-scripts": "1.0.7"
+    "redux-thunk": "^2.2.0",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   }
 }

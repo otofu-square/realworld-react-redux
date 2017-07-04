@@ -1,12 +1,10 @@
-// @flow
+import * as React from 'react';
 
-import React from 'react';
+interface Props {
+  appName: string;
+}
 
-type Props = {
-  appName: string,
-};
-
-const Header = ({ appName }: Props) =>
+const Header: React.StatelessComponent<Props> = ({ appName }) =>
   <nav className="navbar navbar-light">
     <div className="container">
       <a className="navbar-brand">

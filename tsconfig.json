@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "jsx": "react",
+    "rootDir": ".",
+    "strict": true,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceRoot": "src"
+  }
+}
