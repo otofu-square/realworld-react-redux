@@ -13,7 +13,7 @@ import App from './App';
 
 ReactDOM.render(
   // <Provider store={store}>
-  <App />,
+  <App appName={'Conduit'} />,
   // </Provider>,
   document.getElementById('root'),
 );
