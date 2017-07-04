@@ -2,16 +2,11 @@ import * as React from 'react';
 
 import Header from './components/Header';
 import Home from './pages/Home';
-// import Home from './containers/Home';
 
-interface Props {
-  appName: string;
-}
-
-const App = ({ appName }: Props) =>
+const App: React.StatelessComponent = () =>
   <div>
-    <Header appName={appName} />;
-    <Home appName={appName} />
+    <Header appName={'Conduit'} />;
+    <Home appName={'Conduit'} />
   </div>;
 
 export default App;
