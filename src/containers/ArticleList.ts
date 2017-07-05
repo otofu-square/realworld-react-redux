@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { connect, DispatchProp } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 
 import ArticleList from '../components/ArticleList';
@@ -10,15 +10,11 @@ const mapStateToProps = (state: GlobalState) => ({
   articles: state.articleList.articles,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
-  onLoad: () => dispatch(fetchPostsAsync()),
-});
-
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps),
   lifecycle({
     componentWillMount() {
-      (<{ onLoad: typeof fetchPostsAsync }>this.props).onLoad();
+      (<DispatchProp<{}>>this.props).dispatch(fetchPostsAsync());
     },
   }),
 )(ArticleList);

@@ -9,7 +9,7 @@ const App = () =>
     <div>
       <Header appName={'Conduit'} />;
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home as any} />
       </Switch>
     </div>
   </HashRouter>;

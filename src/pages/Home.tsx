@@ -9,7 +9,7 @@ interface Props extends RouteComponentProps<any> {
   appName: string;
 }
 
-const Home: React.StatelessComponent<Props & DispatchProp<{}>> = ({
+const Home: React.StatelessComponent<DispatchProp<{}> & Props> = ({
   appName,
 }: Props) =>
   <div className="home-page">
