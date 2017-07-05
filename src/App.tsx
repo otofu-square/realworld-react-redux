@@ -3,7 +3,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './containers/Home';
-import Login from './pages/Login';
+import Login from './containers/Login';
 
 const App = () =>
   <HashRouter>
