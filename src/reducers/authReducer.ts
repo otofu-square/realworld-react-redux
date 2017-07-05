@@ -11,21 +11,21 @@ import {
 } from '../actions/auth';
 
 const initialState: State = {
-  email: null,
-  password: null,
+  email: '',
+  password: '',
   isAuthenticated: false,
 };
 
 const reducer = (state: State = initialState, action: IAction): State => {
   switch (action.type) {
     case UPDATE_AUTH_EMAIL:
-      return { ...state, email: state.email };
+      return { ...state, email: action.payload.email };
     case UPDATE_AUTH_PASSWORD:
-      return { ...state, password: state.password };
+      return { ...state, password: action.payload.password };
     case LOGIN_REQUEST:
       return state;
     case LOGIN_FAILURE:
-      return { ...state, email: null, password: null };
+      return { ...state, email: '', password: '' };
     case LOGIN_SUCCESS:
       return { ...state, isAuthenticated: true };
     default:

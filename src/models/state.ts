@@ -9,8 +9,8 @@ export interface articleListState {
 }
 
 export interface authState {
-  email: string | null;
-  password: string | null;
+  email: string;
+  password: string;
   isAuthenticated: boolean;
 }
 

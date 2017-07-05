@@ -9,11 +9,11 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export interface IActions {
   UPDATE_AUTH_EMAIL: {
     type: typeof UPDATE_AUTH_EMAIL;
-    payload: { value: string };
+    payload: { email: string };
   };
   UPDATE_AUTH_PASSWORD: {
     type: typeof UPDATE_AUTH_PASSWORD;
-    payload: { value: string };
+    payload: { password: string };
   };
   LOGIN_REQUEST: { type: typeof LOGIN_REQUEST };
   LOGIN_FAILURE: { type: typeof LOGIN_FAILURE };
@@ -24,12 +24,12 @@ export type IAction = IActions[keyof IActions];
 
 export const updateAuthEmail = (email: string) => ({
   type: UPDATE_AUTH_EMAIL as typeof UPDATE_AUTH_EMAIL,
-  payload: { value: email },
+  payload: { email },
 });
 
 export const updateAuthPassword = (password: string) => ({
   type: UPDATE_AUTH_PASSWORD as typeof UPDATE_AUTH_PASSWORD,
-  payload: { value: password },
+  payload: { password },
 });
 
 export const loginRequest = () => ({
@@ -44,23 +44,20 @@ export const loginSuccess = () => ({
   type: LOGIN_SUCCESS as typeof LOGIN_SUCCESS,
 });
 
-export const login = (email: string, password: string) => (
+export const login = (email: string, password: string) => async (
   dispatch: Dispatch<{}>,
 ) => {
   const endpoint = 'https://conduit.productionready.io/api/users/login';
-  const body = new FormData();
-  body.append('json', JSON.stringify({ user: { email, password } }));
   const config = {
     method: 'POST',
-    body,
+    body: JSON.stringify({ user: { email, password } }),
+    headers: { 'Content-Type': 'application/json' },
   };
   dispatch(loginRequest());
-  fetch(endpoint, config).then(res => res.json()).then(
-    res => {
-      dispatch(loginSuccess());
-    },
-    () => {
-      dispatch(loginFailure());
-    },
-  );
+  try {
+    const response = await fetch(endpoint, config);
+    dispatch(loginSuccess());
+  } catch (e) {
+    dispatch(loginFailure());
+  }
 };
