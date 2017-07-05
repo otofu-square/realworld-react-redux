@@ -1,24 +1,20 @@
 import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { connect, DispatchProp } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 
 import ArticleList from '../components/ArticleList';
-import { articleListState as State } from '../models/state';
+import { articleListState, GlobalState } from '../models/state';
 import { fetchPostsAsync } from '../actions/articleList';
 
-const mapStateToProps = (state: State) => ({
-  articles: state.articles,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch<State>) => ({
-  onLoad: () => dispatch(fetchPostsAsync()),
+const mapStateToProps = (state: GlobalState) => ({
+  articles: state.articleList.articles,
 });
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps),
   lifecycle({
     componentWillMount() {
-      (<{ onLoad: typeof fetchPostsAsync }>this.props).onLoad();
+      (<DispatchProp<{}>>this.props).dispatch(fetchPostsAsync());
     },
   }),
 )(ArticleList);

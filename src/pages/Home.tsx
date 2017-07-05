@@ -1,13 +1,17 @@
 import * as React from 'react';
+import { DispatchProp } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 
 import Banner from '../components/Banner';
 import MainView from '../components/MainView';
 
-interface Props {
+interface Props extends RouteComponentProps<any> {
   appName: string;
 }
 
-const Home: React.StatelessComponent<Props> = ({ appName }: Props) =>
+const Home: React.StatelessComponent<DispatchProp<{}> & Props> = ({
+  appName,
+}: Props) =>
   <div className="home-page">
     <Banner appName={appName} />
     <div className="container page">
