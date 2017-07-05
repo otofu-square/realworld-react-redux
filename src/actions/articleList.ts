@@ -33,7 +33,7 @@ export const fetchPostsSuccess = (payload: { articles: Array<Article> }) => ({
   payload,
 });
 
-export const fetchPostsAsync = () => (dispatch: Dispatch<State>) => {
+export const fetchPostsAsync = () => (dispatch: Dispatch<{}>) => {
   const endpoint = 'https://conduit.productionready.io/api/articles?limit=10';
   dispatch(fetchPostsRequest());
   fetch(endpoint).then(res => res.json()).then(

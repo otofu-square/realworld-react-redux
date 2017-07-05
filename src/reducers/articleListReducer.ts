@@ -12,7 +12,7 @@ const initialState: State = {
   articles: null,
 };
 
-const reducer = (state: State = initialState, action: IAction) => {
+const reducer = (state: State = initialState, action: IAction): State => {
   switch (action.type) {
     case FETCH_POSTS_REQUEST:
       return state;

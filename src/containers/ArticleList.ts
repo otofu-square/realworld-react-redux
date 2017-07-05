@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 
 import ArticleList from '../components/ArticleList';
-import { articleListState as State } from '../models/state';
+import { articleListState, GlobalState } from '../models/state';
 import { fetchPostsAsync } from '../actions/articleList';
 
-const mapStateToProps = (state: State) => ({
-  articles: state.articles,
+const mapStateToProps = (state: GlobalState) => ({
+  articles: state.articleList.articles,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<State>) => ({
+const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
   onLoad: () => dispatch(fetchPostsAsync()),
 });
 

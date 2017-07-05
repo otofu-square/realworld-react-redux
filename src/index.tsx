@@ -1,15 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { default as thunk } from 'redux-thunk';
 
 // import './index.css';
 import App from './App';
+import store from './store';
 
-import reducer from './reducers/articleListReducer';
-
-const store = createStore(reducer, applyMiddleware(thunk));
+console.log(store.getState());
 
 const Root = () =>
   <Provider store={store}>
