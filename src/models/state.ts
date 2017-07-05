@@ -11,6 +11,7 @@ export interface articleListState {
 export interface authState {
   email: string | null;
   password: string | null;
+  isAuthenticated: boolean;
 }
 
 export interface GlobalState {
