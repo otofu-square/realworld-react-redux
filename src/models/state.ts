@@ -8,7 +8,13 @@ export interface articleListState {
   articles: Array<Article> | null;
 }
 
+export interface authState {
+  email: string | null;
+  password: string | null;
+}
+
 export interface GlobalState {
   appInfo: appInfoState;
   articleList: articleListState;
+  auth: authState;
 }
