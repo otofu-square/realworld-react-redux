@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './store';
 
-console.log(store.getState());
-
 const Root = () =>
   <Provider store={store}>
     <App />
