@@ -14,6 +14,7 @@ const initialState: State = {
   email: '',
   password: '',
   isAuthenticated: false,
+  currentUser: null,
   errors: [],
 };
 
@@ -30,10 +31,15 @@ const reducer = (state: State = initialState, action: IAction): State => {
         ...state,
         email: '',
         password: '',
+        currentUser: null,
         errors: action.payload.errors,
       };
     case LOGIN_SUCCESS:
-      return { ...state, isAuthenticated: true };
+      return {
+        ...state,
+        isAuthenticated: true,
+        currentUser: action.payload.currentUser,
+      };
     default:
       return state;
   }

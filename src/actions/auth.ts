@@ -1,5 +1,7 @@
 import { Dispatch } from 'redux';
 
+import { User } from '../models/user';
+
 export const UPDATE_AUTH_EMAIL = 'UPDATE_AUTH_EMAIL';
 export const UPDATE_AUTH_PASSWORD = 'UPDATE_AUTH_PASSWORD';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
@@ -20,7 +22,10 @@ export interface IActions {
     type: typeof LOGIN_FAILURE;
     payload: { errors: Array<any> };
   };
-  LOGIN_SUCCESS: { type: typeof LOGIN_SUCCESS };
+  LOGIN_SUCCESS: {
+    type: typeof LOGIN_SUCCESS;
+    payload: { currentUser: User };
+  };
 }
 
 export type IAction = IActions[keyof IActions];
@@ -44,8 +49,9 @@ export const loginFailure = (errors: Array<any>) => ({
   payload: { errors },
 });
 
-export const loginSuccess = () => ({
+export const loginSuccess = (currentUser: any) => ({
   type: LOGIN_SUCCESS as typeof LOGIN_SUCCESS,
+  payload: { currentUser },
 });
 
 export const login = (email: string, password: string) => async (
@@ -62,7 +68,7 @@ export const login = (email: string, password: string) => async (
     const response = await fetch(endpoint, config);
     const json = await response.json();
     if (response.status === 200) {
-      dispatch(loginSuccess());
+      dispatch(loginSuccess(json.user));
     } else {
       dispatch(loginFailure(json.errors));
     }
