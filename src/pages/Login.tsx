@@ -2,10 +2,13 @@ import * as React from 'react';
 import { DispatchProp } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 
+import ListErrors from '../components/ListErrors';
+
 interface StateProps extends RouteComponentProps<any> {
   email: string;
   password: string;
   isAuthenticated: boolean;
+  errors: Array<any>;
 }
 
 interface DispatchProps extends DispatchProp<{}> {
@@ -18,6 +21,7 @@ const Login: React.StatelessComponent<StateProps & DispatchProps> = ({
   email,
   password,
   isAuthenticated,
+  errors,
   onChangeEmail,
   onChangePassword,
   onSubmit,
@@ -30,6 +34,7 @@ const Login: React.StatelessComponent<StateProps & DispatchProps> = ({
           <p className="text-xs-center">
             <a>Need an account?</a>
           </p>
+          <ListErrors errors={errors} />
           <form>
             <fieldset>
               <fieldset className="form-group">
