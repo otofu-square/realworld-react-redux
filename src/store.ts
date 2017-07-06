@@ -6,6 +6,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import appInfoReducer from './reducers/appInfoReducer';
 import articleListReducer from './reducers/articleListReducer';
 import authReducer from './reducers/authReducer';
+import { localStorageMiddleware } from './middlewares/localStorage';
 
 const reducer = combineReducers({
   appInfo: appInfoReducer,
@@ -17,5 +18,9 @@ const reducer = combineReducers({
 export const history = createHistory();
 export const store = createStore(
   reducer,
-  compose(applyMiddleware(thunk), applyMiddleware(routerMiddleware(history))),
+  compose(
+    applyMiddleware(thunk),
+    applyMiddleware(routerMiddleware(history)),
+    applyMiddleware(<any>localStorageMiddleware),
+  ),
 );
