@@ -5,13 +5,13 @@ import { RouteComponentProps } from 'react-router-dom';
 import Banner from '../components/Banner';
 import MainView from '../components/MainView';
 
-interface Props extends RouteComponentProps<any> {
+interface StateProps extends RouteComponentProps<any> {
   appName: string;
 }
 
-const Home: React.StatelessComponent<DispatchProp<{}> & Props> = ({
+const Home: React.StatelessComponent<DispatchProp<{}> & StateProps> = ({
   appName,
-}: Props) =>
+}) =>
   <div className="home-page">
     <Banner appName={appName} />
     <div className="container page">

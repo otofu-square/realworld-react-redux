@@ -2,6 +2,7 @@ import { Article } from './article';
 
 export interface appInfoState {
   appName: string;
+  token: string;
 }
 
 export interface articleListState {
