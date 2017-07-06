@@ -1,4 +1,5 @@
 import { Article } from './article';
+import { User } from './user';
 
 export interface appInfoState {
   appName: string;
@@ -13,6 +14,7 @@ export interface authState {
   email: string;
   password: string;
   isAuthenticated: boolean;
+  currentUser: User | null;
   errors: Array<any>;
 }
 
