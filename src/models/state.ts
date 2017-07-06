@@ -1,3 +1,5 @@
+import { RouterState } from 'react-router-redux';
+
 import { Article } from './article';
 import { User } from './user';
 
@@ -22,4 +24,5 @@ export interface GlobalState {
   appInfo: appInfoState;
   articleList: articleListState;
   auth: authState;
+  router: any;
 }

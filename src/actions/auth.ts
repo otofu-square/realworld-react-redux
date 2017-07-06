@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+import { push } from 'react-router-redux';
 
 import { User } from '../models/user';
 
@@ -69,6 +70,7 @@ export const login = (email: string, password: string) => async (
     const json = await response.json();
     if (response.status === 200) {
       dispatch(loginSuccess(json.user));
+      dispatch(push('/'));
     } else {
       dispatch(loginFailure(json.errors));
     }
