@@ -1,6 +1,4 @@
 import { Dispatch } from 'redux';
-import { createAction, ActionFunction1 } from 'redux-actions';
-import { ThunkAction } from 'redux-thunk';
 
 import { Article } from '../models/article';
 import { articleListState as State } from '../models/state';
