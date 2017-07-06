@@ -12,6 +12,7 @@ export interface authState {
   email: string;
   password: string;
   isAuthenticated: boolean;
+  errors: Array<any>;
 }
 
 export interface GlobalState {

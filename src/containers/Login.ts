@@ -9,6 +9,7 @@ const mapStateToProps = (state: GlobalState) => ({
   email: state.auth.email,
   password: state.auth.password,
   isAuthenticated: state.auth.isAuthenticated,
+  errors: state.auth.errors,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({

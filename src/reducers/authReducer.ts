@@ -14,6 +14,7 @@ const initialState: State = {
   email: '',
   password: '',
   isAuthenticated: false,
+  errors: [],
 };
 
 const reducer = (state: State = initialState, action: IAction): State => {
@@ -25,7 +26,12 @@ const reducer = (state: State = initialState, action: IAction): State => {
     case LOGIN_REQUEST:
       return state;
     case LOGIN_FAILURE:
-      return { ...state, email: '', password: '' };
+      return {
+        ...state,
+        email: '',
+        password: '',
+        errors: action.payload.errors,
+      };
     case LOGIN_SUCCESS:
       return { ...state, isAuthenticated: true };
     default:

@@ -16,7 +16,10 @@ export interface IActions {
     payload: { password: string };
   };
   LOGIN_REQUEST: { type: typeof LOGIN_REQUEST };
-  LOGIN_FAILURE: { type: typeof LOGIN_FAILURE };
+  LOGIN_FAILURE: {
+    type: typeof LOGIN_FAILURE;
+    payload: { errors: Array<any> };
+  };
   LOGIN_SUCCESS: { type: typeof LOGIN_SUCCESS };
 }
 
@@ -36,8 +39,9 @@ export const loginRequest = () => ({
   type: LOGIN_REQUEST as typeof LOGIN_REQUEST,
 });
 
-export const loginFailure = () => ({
+export const loginFailure = (errors: Array<any>) => ({
   type: LOGIN_FAILURE as typeof LOGIN_FAILURE,
+  payload: { errors },
 });
 
 export const loginSuccess = () => ({
@@ -56,8 +60,13 @@ export const login = (email: string, password: string) => async (
   dispatch(loginRequest());
   try {
     const response = await fetch(endpoint, config);
-    dispatch(loginSuccess());
+    const json = await response.json();
+    if (response.status === 200) {
+      dispatch(loginSuccess());
+    } else {
+      dispatch(loginFailure(json.errors));
+    }
   } catch (e) {
-    dispatch(loginFailure());
+    dispatch(loginFailure([{ SystemError: 'has occured.' }]));
   }
 };
