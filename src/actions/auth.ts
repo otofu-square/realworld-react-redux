@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import { push } from 'react-router-redux';
 
 import { User } from '../models/user';
-import { Auth } from '../agent';
+import { Auth as AuthAgent } from '../agent';
 
 export const UPDATE_AUTH_EMAIL = 'UPDATE_AUTH_EMAIL';
 export const UPDATE_AUTH_PASSWORD = 'UPDATE_AUTH_PASSWORD';
@@ -61,7 +61,7 @@ export const login = (email: string, password: string) => async (
 ) => {
   dispatch(loginRequest());
   try {
-    const response = await Auth.login(email, password);
+    const response = await AuthAgent.login(email, password);
     const json = await response.json();
     if (response.status === 200) {
       dispatch(loginSuccess(json.user));

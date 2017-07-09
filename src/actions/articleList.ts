@@ -2,6 +2,7 @@ import { Dispatch } from 'redux';
 
 import { Article } from '../models/article';
 import { articleListState as State } from '../models/state';
+import { Article as ArticleAgent } from '../agent';
 
 export const FETCH_POSTS_REQUEST = 'FETCH_POSTS_REQUEST';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
@@ -31,15 +32,13 @@ export const fetchPostsSuccess = (payload: { articles: Array<Article> }) => ({
   payload,
 });
 
-export const fetchPostsAsync = () => (dispatch: Dispatch<{}>) => {
-  const endpoint = 'https://conduit.productionready.io/api/articles?limit=10';
+export const fetchPostsAsync = () => async (dispatch: Dispatch<{}>) => {
   dispatch(fetchPostsRequest());
-  fetch(endpoint).then(res => res.json()).then(
-    res => {
-      dispatch(fetchPostsSuccess(res));
-    },
-    () => {
-      dispatch(fetchPostsFailure());
-    },
-  );
+  try {
+    const response = await ArticleAgent.all(10);
+    const json = await response.json();
+    dispatch(fetchPostsSuccess(json));
+  } catch (e) {
+    dispatch(fetchPostsFailure());
+  }
 };
