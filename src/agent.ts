@@ -17,6 +17,10 @@ const request = {
     }),
 };
 
+export const Article = {
+  all: (size: number) => request.get(`/articles?limit=${size}`),
+};
+
 export const Auth = {
   current: () => request.get('/user'),
   login: (email: string, password: string) =>
