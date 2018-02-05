@@ -2,6 +2,7 @@ import { Dispatch } from 'redux';
 import { push } from 'react-router-redux';
 
 import { User } from '../models/user';
+import { Auth as AuthAgent } from '../agent';
 
 export const UPDATE_AUTH_EMAIL = 'UPDATE_AUTH_EMAIL';
 export const UPDATE_AUTH_PASSWORD = 'UPDATE_AUTH_PASSWORD';
@@ -58,15 +59,9 @@ export const loginSuccess = (currentUser: any) => ({
 export const login = (email: string, password: string) => async (
   dispatch: Dispatch<{}>,
 ) => {
-  const endpoint = 'https://conduit.productionready.io/api/users/login';
-  const config = {
-    method: 'POST',
-    body: JSON.stringify({ user: { email, password } }),
-    headers: { 'Content-Type': 'application/json' },
-  };
   dispatch(loginRequest());
   try {
-    const response = await fetch(endpoint, config);
+    const response = await AuthAgent.login(email, password);
     const json = await response.json();
     if (response.status === 200) {
       dispatch(loginSuccess(json.user));
