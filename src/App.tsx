@@ -32,7 +32,6 @@ export const App = ({ count, onAddClick, onSubClick }: Props) => (
   <>
     <StyledHeader>Count: {count}</StyledHeader>
     <StyledDiv>
-      {/* tslint:disable no-console */}
       <Button onClick={onAddClick}> + </Button>
       <Button onClick={onSubClick}> - </Button>
     </StyledDiv>
