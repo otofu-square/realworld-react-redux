@@ -1,16 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 
-import { Action } from './action';
-import { reducer, State } from './reducer';
-
-export type ReduxAction = Action;
-
-export interface ReduxState {
-  root: State;
-}
-
-const rootReducer = combineReducers<ReduxState>({
-  root: reducer,
-});
+import { rootReducer, ReduxState } from './rootReducer';
 
 export const store = createStore<ReduxState>(rootReducer);
