@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-import { Counter } from './containers/Counter';
+import { Header } from './components/Header';
 
-export const App = () => <Counter />;
+export const App = () => <Header />;
