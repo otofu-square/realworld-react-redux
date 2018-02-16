@@ -5,9 +5,8 @@ import {
   ArticleList as Component,
   ViewProps,
 } from '../../components/ArticleList/';
-import { ReduxState } from '../../rootReducer';
-import { DispatchProp } from '../../store';
 import { articleActions } from '../../modules/article';
+import { ReduxState, DispatchProp } from '../../types/redux';
 
 const mapStateToProps: MapStateToProps<ViewProps, {}, ReduxState> = ({
   article: { articles, loading },

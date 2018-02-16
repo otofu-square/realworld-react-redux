@@ -1,7 +1,7 @@
 import { connect, MapDispatchToProps } from 'react-redux';
 
 import { counterActions } from '../modules/counter';
-import { ReduxState } from '../rootReducer';
+import { ReduxState } from '../types/redux';
 import {
   Counter as Component,
   ActionProps,
