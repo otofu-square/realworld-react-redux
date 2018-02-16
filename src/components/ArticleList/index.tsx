@@ -2,12 +2,13 @@ import * as React from 'react';
 import { branch, compose, renderComponent } from 'recompose';
 import { translate, InjectedTranslateProps } from 'react-i18next';
 
-type ViewProps = {
-  articles: {
-    title: string;
-  }[];
+import { Article } from '../../modules/article';
+
+export type ViewProps = {
+  articles: Article[];
+  loading: boolean;
 };
-type ActionProps = {};
+export type ActionProps = {};
 type Props = ViewProps & ActionProps;
 type ComposedProps = Props & InjectedTranslateProps;
 
