@@ -10,7 +10,8 @@
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
-    "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
+    "test":
+      "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "@types/react-redux": "^5.0.14",
     "@types/recompose": "^0.24.5",
     "antd": "^3.2.0",
+    "axios": "^0.17.1",
     "i18next": "^10.3.0",
     "i18next-browser-languagedetector": "^2.1.0",
     "react-app-rewired": "^1.4.1",
@@ -31,6 +33,7 @@
     "react-redux": "^5.0.6",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
     "styled-components": "^3.1.6",
     "ts-import-plugin": "^1.4.3",
     "typescript": "^2.7.1"
