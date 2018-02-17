@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { renderRoutes } from 'react-router-config';
 
-import { Header } from './components/Header';
-import { Home } from './components/Home';
+import { Header } from './containers/Header';
 
-export const App = () => (
+export const App = ({ route }: any) => (
   <>
     <Header />
-    <Home />
+    {renderRoutes(route.routes)}
   </>
 );
