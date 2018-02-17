@@ -3,10 +3,10 @@ import { connect, MapStateToProps } from 'react-redux';
 import { push } from 'react-router-redux';
 
 import {
-  Header as Component,
+  Root as Component,
   ViewProps,
   ActionProps,
-} from '../../components/Header';
+} from '../../components/templates/Root';
 import { ReduxState, ReduxAction } from '../../types/redux';
 
 const mapStateToProps: MapStateToProps<
@@ -28,4 +28,4 @@ const mapDispatchToProps: MapDispatchToProps = dispatch => ({
   },
 });
 
-export const Header = connect(mapStateToProps, mapDispatchToProps)(Component);
+export const Root = connect(mapStateToProps, mapDispatchToProps)(Component);
