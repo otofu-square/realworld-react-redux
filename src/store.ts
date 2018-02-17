@@ -7,8 +7,9 @@ import { rootReducer } from './reducer';
 import { rootSaga } from './sagas';
 import { ReduxState } from './types/redux';
 
-const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
+
+export const history = createBrowserHistory();
 
 export const store = createStore<ReduxState>(
   rootReducer,
