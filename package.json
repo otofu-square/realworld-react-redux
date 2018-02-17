@@ -10,7 +10,8 @@
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
-    "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
+    "test":
+      "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
@@ -35,7 +36,7 @@
     "react-app-rewired": "^1.4.1",
     "react-i18next": "^7.3.6",
     "react-redux": "^5.0.6",
-    "react-route-config": "^2.0.1",
+    "react-router-config": "^2.0.1",
     "react-router": "^4.2.0",
     "react-router-redux": "^5.0.0-alpha.9",
     "recompose": "^0.26.0",
