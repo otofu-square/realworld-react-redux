@@ -28,7 +28,6 @@ export const ArticlePreview = ({
         </button>
       </div>
     </div>
-    {/* @ts-ignore */}
     <a href={`./article/${slug}`} className="preview-link">
       <h1>{title}</h1>
       <p>{description}</p>

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { translate, InjectedTranslateProps } from 'react-i18next';
 
-import { Banner } from '../Banner';
-import { MainView } from '../MainView';
+import { Banner } from '../../Banner';
+import { MainView } from '../../MainView';
 
 type Props = InjectedTranslateProps;
 

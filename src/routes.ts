@@ -1,7 +1,5 @@
 import { App } from './App';
-import { Home } from './components/Home';
-import { Login } from './components/Login';
-import { NotFound } from './components/NotFound';
+import { Home, Login, NotFound } from './components/pages';
 
 export const routes = [
   {
