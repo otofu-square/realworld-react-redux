@@ -2,6 +2,7 @@ import * as React from 'react';
 import { branch, compose, renderComponent } from 'recompose';
 import { translate, InjectedTranslateProps } from 'react-i18next';
 
+import { ArticlePreview } from '../ArticlePreview';
 import { Article } from '../../modules/article';
 
 export type ViewProps = {
@@ -26,7 +27,9 @@ const Empty = ({ t }: ComposedProps) => (
 
 const List = ({ articles }: Props) => (
   <div>
-    {articles.map(({ title }) => <h2 key={`article-${title}`}> {title}</h2>)}
+    {articles.map(article => (
+      <ArticlePreview key={`article-${article.title}`} {...article} />
+    ))}
   </div>
 );
 
