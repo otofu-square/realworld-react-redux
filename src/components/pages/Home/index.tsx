@@ -29,7 +29,7 @@ const Component = ({ articles, loading, t }: ComposedProps) => (
               </li>
             </ul>
           </div>
-          <ArticleList articles={articles} loading={loading} />
+          {!loading && <ArticleList articles={articles} loading={loading} />}
         </div>
         <Sidebar />
       </div>
