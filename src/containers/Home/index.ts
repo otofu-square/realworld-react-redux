@@ -1,10 +1,7 @@
 import { compose, lifecycle } from 'recompose';
 import { connect, MapStateToProps } from 'react-redux';
 
-import {
-  ArticleList as Component,
-  ViewProps,
-} from '../../components/ArticleList/';
+import { Home as Component, ViewProps } from '../../components/pages/Home';
 import { articleActions } from '../../modules/article';
 import { ReduxState, DispatchProp } from '../../types/redux';
 
@@ -15,7 +12,7 @@ const mapStateToProps: MapStateToProps<ViewProps, {}, ReduxState> = ({
   loading,
 });
 
-export const ArticleList = compose<{}, {}>(
+export const Home = compose<{}, {}>(
   connect(mapStateToProps),
   lifecycle<DispatchProp, {}, {}>({
     componentDidMount() {
