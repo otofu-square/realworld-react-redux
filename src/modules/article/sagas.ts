@@ -1,7 +1,8 @@
-import { all, call, fork, put } from 'redux-saga/effects';
+import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 
 import { get, GetResponse } from './api';
 import { actions } from './actions';
+import { FETCH } from './actionTypes';
 
 function* fetch() {
   try {
@@ -15,6 +16,10 @@ function* fetch() {
   }
 }
 
+function* watchFetch() {
+  yield takeLatest(FETCH, fetch);
+}
+
 export function* sagas() {
-  yield all([fork(fetch)]);
+  yield all([fork(watchFetch)]);
 }

@@ -1,7 +1,8 @@
 import { Reducer } from 'redux';
 
 import { Article } from './types';
-import { START_LOADING, STOP_LOADING, FETCH_SUCCESS, Action } from './actions';
+import { Action } from './actions';
+import { START_LOADING, STOP_LOADING, FETCH_SUCCESS } from './actionTypes';
 
 export type State = {
   articles: Article[];
