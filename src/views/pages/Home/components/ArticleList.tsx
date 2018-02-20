@@ -3,7 +3,7 @@ import { branch, compose, renderComponent } from 'recompose';
 import { translate, InjectedTranslateProps } from 'react-i18next';
 
 import { ArticlePreview } from './ArticlePreview';
-import { Article } from '../../../modules/article';
+import { Article } from '@/modules/article';
 
 type Props = {
   articles: Article[];

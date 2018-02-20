@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { renderRoutes } from 'react-router-config';
 
-import { store, history } from './store';
-import registerServiceWorker from './registerServiceWorker';
+import { store, history } from '@/store';
+import registerServiceWorker from '@/registerServiceWorker';
 import { routes } from './routes';
 import './i18n';
 

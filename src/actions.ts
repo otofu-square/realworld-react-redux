@@ -1,3 +1,3 @@
-import { ArticleAction } from './modules/article';
+import { ArticleAction } from '@/modules/article';
 
 export type ReduxAction = ArticleAction;
