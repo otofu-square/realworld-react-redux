@@ -1,18 +1,10 @@
 import { AxiosResponse } from 'axios';
 
 import { client } from '../../utils/client';
+import { User } from './types';
 
 export type LoginResponse = AxiosResponse<{
-  user: {
-    id: number;
-    email: string;
-    createdAt: string;
-    updatedAt: string;
-    username: string;
-    bio: string | null;
-    image: string | null;
-    token: string;
-  };
+  user: User;
 }>;
 
 export const login = (email: string, password: string) =>
