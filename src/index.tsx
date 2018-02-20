@@ -6,8 +6,8 @@ import { renderRoutes } from 'react-router-config';
 
 import { store, history } from '@/store';
 import registerServiceWorker from '@/registerServiceWorker';
-import { routes } from './routes';
-import './i18n';
+import { routes } from '@/routes';
+import '@/i18n';
 
 ReactDOM.render(
   <Provider store={store}>
