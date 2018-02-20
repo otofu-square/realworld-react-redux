@@ -4,7 +4,7 @@ import { translate, InjectedTranslateProps } from 'react-i18next';
 import { Banner } from './Banner';
 import { Sidebar } from './Sidebar';
 import { ArticleList } from './ArticleList';
-import { Article } from '../../../../modules/article';
+import { Article } from '@/modules/article';
 
 export type ViewProps = {
   articles: Article[];

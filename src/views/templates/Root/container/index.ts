@@ -3,7 +3,7 @@ import { connect, MapStateToProps } from 'react-redux';
 import { push } from 'react-router-redux';
 
 import { Root as Component, ViewProps, ActionProps } from '../components';
-import { ReduxState, ReduxAction } from '../../../../types/redux';
+import { ReduxState, ReduxAction } from '@/types/redux';
 
 const mapStateToProps: MapStateToProps<
   ViewProps,

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer, RouterState } from 'react-router-redux';
 
-import { articleReducer, ArticleState } from './modules/article';
+import { articleReducer, ArticleState } from '@/modules/article';
 
 export type ReduxState = {
   article: ArticleState;

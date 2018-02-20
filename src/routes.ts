@@ -1,5 +1,5 @@
-import { App } from './App';
-import { Home, Login, NotFound } from './views/pages';
+import { App } from '@/App';
+import { Home, Login, NotFound } from '@/views/pages';
 
 export const routes = [
   {
