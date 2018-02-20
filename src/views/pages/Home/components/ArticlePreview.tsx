@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Article } from '../../../modules/article';
+import { Article } from '../../../../modules/article';
 
 type Props = Article;
 
