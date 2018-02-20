@@ -1,6 +1,5 @@
 import { App } from './App';
-import { Home } from './containers/Home';
-import { Login, NotFound } from './components/pages';
+import { Home, Login, NotFound } from './views/pages';
 
 export const routes = [
   {
