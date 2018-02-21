@@ -23,8 +23,8 @@ export const reducer: Reducer<State> = (
       return { ...state, loading: true };
     case STOP_LOADING:
       return { ...state, loading: false };
-    case FETCH_SUCCESS:
-      return { ...state, articles: action.payload };
+    case LOGIN_SUCCESS:
+      return { ...state, user: action.payload };
     default:
       return state;
   }
