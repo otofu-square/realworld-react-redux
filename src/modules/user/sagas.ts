@@ -2,13 +2,17 @@ import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 
 import * as api from './api';
 import { actions, Actions } from './actions';
-import { LOGIN } from './actionTypes';
+import { CREATE } from './actionTypes';
 
-function* login({ payload: { email, password } }: Actions['LOGIN']) {
+function* create({ payload: { email, password } }: Actions['CREATE']) {
   try {
     yield put(actions.startLoading());
-    const response: api.LoginResponse = yield call(api.login, email, password);
-    yield put(actions.loginSuccess(response.data.user));
+    const response: api.CreateResponse = yield call(
+      api.create,
+      email,
+      password,
+    );
+    yield put(actions.createSuccess(response.data.user));
   } catch (e) {
     // @ts-ignore
   } finally {
@@ -16,10 +20,10 @@ function* login({ payload: { email, password } }: Actions['LOGIN']) {
   }
 }
 
-function* watchLogin() {
-  yield takeLatest(LOGIN, login);
+function* watchCreate() {
+  yield takeLatest(CREATE, create);
 }
 
 export function* sagas() {
-  yield all([fork(watchLogin)]);
+  yield all([fork(watchCreate)]);
 }

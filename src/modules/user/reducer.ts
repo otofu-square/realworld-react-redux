@@ -2,7 +2,7 @@ import { Reducer } from 'redux';
 
 import { User } from './types';
 import { Action } from './actions';
-import { START_LOADING, STOP_LOADING, LOGIN_SUCCESS } from './actionTypes';
+import { START_LOADING, STOP_LOADING, CREATE_SUCCESS } from './actionTypes';
 
 export type State = {
   user: User | null;
@@ -23,7 +23,7 @@ export const reducer: Reducer<State> = (
       return { ...state, loading: true };
     case STOP_LOADING:
       return { ...state, loading: false };
-    case LOGIN_SUCCESS:
+    case CREATE_SUCCESS:
       return { ...state, user: action.payload };
     default:
       return state;

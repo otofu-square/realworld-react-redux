@@ -2,22 +2,22 @@ import { User } from './types';
 import {
   START_LOADING,
   STOP_LOADING,
-  LOGIN,
-  LOGIN_SUCCESS,
+  CREATE,
+  CREATE_SUCCESS,
 } from './actionTypes';
 
 export interface Actions {
   START_LOADING: { type: typeof START_LOADING };
   STOP_LOADING: { type: typeof STOP_LOADING };
-  LOGIN: {
-    type: typeof LOGIN;
+  CREATE: {
+    type: typeof CREATE;
     payload: {
       email: string;
       password: string;
     };
   };
-  LOGIN_SUCCESS: {
-    type: typeof LOGIN_SUCCESS;
+  CREATE_SUCCESS: {
+    type: typeof CREATE_SUCCESS;
     payload: User;
   };
 }
@@ -27,12 +27,12 @@ export type Action = Actions[keyof Actions];
 export const actions = {
   startLoading: (): Actions['START_LOADING'] => ({ type: START_LOADING }),
   stopLoading: (): Actions['STOP_LOADING'] => ({ type: STOP_LOADING }),
-  login: (email: string, password: string): Actions['LOGIN'] => ({
-    type: LOGIN,
+  create: (email: string, password: string): Actions['CREATE'] => ({
+    type: CREATE,
     payload: { email, password },
   }),
-  loginSuccess: (user: User): Actions['LOGIN_SUCCESS'] => ({
-    type: LOGIN_SUCCESS,
+  createSuccess: (user: User): Actions['CREATE_SUCCESS'] => ({
+    type: CREATE_SUCCESS,
     payload: user,
   }),
 };

@@ -3,12 +3,12 @@ import { AxiosResponse } from 'axios';
 import { client } from '@/utils/client';
 import { User } from './types';
 
-export type LoginResponse = AxiosResponse<{
+export type CreateResponse = AxiosResponse<{
   user: User;
 }>;
 
-export const login = (email: string, password: string) =>
-  client.post<LoginResponse>(
+export const create = (email: string, password: string) =>
+  client.post<CreateResponse>(
     `/users/login`,
     JSON.stringify({
       user: {
