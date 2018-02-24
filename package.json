@@ -31,6 +31,7 @@
     "@types/redux-mock-store": "^0.0.13",
     "antd": "^3.2.1",
     "axios": "^0.17.1",
+    "formik": "^0.11.11",
     "history": "^4.7.2",
     "i18next": "^10.4.1",
     "i18next-browser-languagedetector": "^2.1.0",
