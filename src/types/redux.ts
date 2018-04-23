@@ -6,3 +6,4 @@ import { ReduxState as _ReduxState } from '@/reducer';
 export type ReduxAction = _ReduxAction;
 export type ReduxState = _ReduxState;
 export type DispatchProp = _DispatchProp<ReduxAction>;
+export type MapDispatchToProps<AP> = (_: DispatchProp) => AP;
