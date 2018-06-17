@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { translate, InjectedTranslateProps } from 'react-i18next';
-import { withFormik, FormikProps } from 'formik';
+import { FormikProps } from 'formik';
 
 export type Values = {
   email: string;
