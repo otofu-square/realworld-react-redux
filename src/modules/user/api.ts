@@ -1,5 +1,4 @@
 import { AxiosResponse } from 'axios';
-
 import { client } from '@/utils/client';
 import { User } from './types';
 

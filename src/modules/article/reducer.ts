@@ -1,5 +1,4 @@
 import { Reducer } from 'redux';
-
 import { Article } from './types';
 import { Action } from './actions';
 import { START_LOADING, STOP_LOADING, FETCH_SUCCESS } from './actionTypes';

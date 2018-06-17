@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { translate, InjectedTranslateProps } from 'react-i18next';
-
 import { Banner } from './Banner';
 import { Sidebar } from './Sidebar';
 import { ArticleList } from './ArticleList';

@@ -1,7 +1,6 @@
 import * as i18next from 'i18next';
 import * as LanguageDetector from 'i18next-browser-languagedetector';
 import { reactI18nextModule } from 'react-i18next';
-
 import { en, ja } from '@/locales';
 
 const lngDetector = new LanguageDetector(null, {

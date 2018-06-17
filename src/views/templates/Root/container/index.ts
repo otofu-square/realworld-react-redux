@@ -1,7 +1,6 @@
 import { Dispatch } from 'redux';
 import { connect, MapStateToProps } from 'react-redux';
 import { push } from 'react-router-redux';
-
 import { Root as Component, ViewProps, ActionProps } from '../components';
 import { ReduxState, ReduxAction } from '@/types/redux';
 
@@ -24,4 +23,7 @@ const mapDispatchToProps: MapDispatchToProps = dispatch => ({
   },
 });
 
-export const Root = connect(mapStateToProps, mapDispatchToProps)(Component);
+export const Root = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Component);
