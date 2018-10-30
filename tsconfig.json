@@ -3,12 +3,17 @@
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "typeRoots": [
+      "./typings"
+    ],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -16,11 +21,22 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "baseUrl": "./",
-    "paths": {
-      "@*": ["src*"]
-    }
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "isolatedModules": true
   },
+  "paths": {
+    "@*": [
+      "src*"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
     "build",

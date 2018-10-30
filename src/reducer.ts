@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
-import { routerReducer, RouterState } from 'react-router-redux';
-import { articleReducer, ArticleState } from '@/modules/article';
-import { userReducer, UserState } from '@/modules/user';
+import { combineReducers } from "redux";
+import { routerReducer, RouterState } from "react-router-redux";
+import { articleReducer, ArticleState } from "@/modules/article";
+import { userReducer, UserState } from "@/modules/user";
 
 export type ReduxState = {
   article: ArticleState;
@@ -12,5 +12,5 @@ export type ReduxState = {
 export const rootReducer = combineReducers<ReduxState>({
   article: articleReducer,
   user: userReducer,
-  router: routerReducer,
+  router: routerReducer
 });

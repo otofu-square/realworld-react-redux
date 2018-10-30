@@ -1,23 +1,23 @@
-import { App } from '@/App';
-import { Home, Login, NotFound } from '@/views/pages';
+import { App } from "@/App";
+import { Home, Login, NotFound } from "@/views/pages";
 
 export const routes = [
   {
     component: App,
     routes: [
       {
-        path: '/',
+        path: "/",
         exact: true,
-        component: Home,
+        component: Home
       },
       {
-        path: '/login',
-        component: Login,
+        path: "/login",
+        component: Login
       },
       {
-        path: '*',
-        component: NotFound,
-      },
-    ],
-  },
+        path: "*",
+        component: NotFound
+      }
+    ]
+  }
 ];
