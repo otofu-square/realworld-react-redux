@@ -1,29 +1,36 @@
-import { Dispatch } from 'redux';
-import { connect, MapStateToProps } from 'react-redux';
-import { push } from 'react-router-redux';
-import { Root as Component, ViewProps, ActionProps } from '../components';
-import { ReduxState, ReduxAction } from '@/types/redux';
+import * as React from "react";
+import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
+import { push } from "react-router-redux";
+import { Root as Component, ViewProps, ActionProps } from "../components";
+import { ReduxState } from "../../../../types/redux";
 
-const mapStateToProps: MapStateToProps<
-  ViewProps,
-  {},
-  ReduxState
-> = ({}) => ({});
+type OwnProps = {
+  children: React.ReactNode;
+};
 
-type MapDispatchToProps = (_: Dispatch<ReduxAction>) => ActionProps;
-const mapDispatchToProps: MapDispatchToProps = dispatch => ({
+const mapStateToProps: MapStateToProps<ViewProps, OwnProps, ReduxState> = (
+  _,
+  { children }
+) => ({
+  children
+});
+
+const mapDispatchToProps: MapDispatchToProps<
+  ActionProps,
+  OwnProps
+> = dispatch => ({
   onLogoClick: () => {
-    dispatch(push('/'));
+    dispatch(push("/"));
   },
   onHomeClick: () => {
-    dispatch(push('/'));
+    dispatch(push("/"));
   },
   onLoginClick: () => {
-    dispatch(push('/login'));
-  },
+    dispatch(push("/login"));
+  }
 });
 
 export const Root = connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Component);

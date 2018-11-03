@@ -1,7 +1,7 @@
-import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
-import { get, GetResponse } from './api';
-import { actions } from './actions';
-import { FETCH } from './actionTypes';
+import { all, call, fork, put, takeLatest } from "redux-saga/effects";
+import { get, GetResponse } from "./api";
+import { actions } from "./actions";
+import { FETCH } from "./actionTypes";
 
 function* fetch() {
   try {

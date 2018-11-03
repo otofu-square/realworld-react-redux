@@ -1,35 +1,38 @@
-import * as React from 'react';
-import { translate, InjectedTranslateProps } from 'react-i18next';
+import * as React from "react";
+import { withNamespaces, WithNamespaces } from "react-i18next";
 
 export type ViewProps = {};
+
 export type ActionProps = {
   onLogoClick: () => void;
   onHomeClick: () => void;
   onLoginClick: () => void;
 };
-type Props = ViewProps & ActionProps;
-type ComposedProps = Props & InjectedTranslateProps;
 
-const Component = ({
+type Props = ViewProps & ActionProps;
+
+type ComposedProps = Props & WithNamespaces;
+
+const Component: React.SFC<ComposedProps> = ({
   onLogoClick,
   onHomeClick,
   onLoginClick,
-  t,
-}: ComposedProps) => (
+  t
+}) => (
   <nav className="navbar navbar-light">
     <div className="container">
       <div className="navbar-brand" onClick={onLogoClick}>
-        {t('common.appName')}
+        {t("common.appName")}
       </div>
       <ul className="nav navbar-nav pull-xs-right">
         <li className="nav-item">
           <div className="nav-link" onClick={onHomeClick}>
-            {t('common.home')}
+            {t("common.home")}
           </div>
         </li>
         <li className="nav-item">
           <div className="nav-link" onClick={onLoginClick}>
-            {t('common.login')}
+            {t("common.login")}
           </div>
         </li>
       </ul>
@@ -37,4 +40,4 @@ const Component = ({
   </nav>
 );
 
-export const Header = translate()(Component);
+export const Header = withNamespaces()(Component);

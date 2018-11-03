@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export const Sidebar = () => (
   <div className="col-md-3">

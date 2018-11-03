@@ -1,3 +1,3 @@
 export const article = {
-  empty: '記事はまだありません',
+  empty: "記事はまだありません"
 };

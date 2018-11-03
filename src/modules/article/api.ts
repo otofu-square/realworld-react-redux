@@ -1,6 +1,6 @@
-import { AxiosResponse } from 'axios';
-import { client } from '@/utils/client';
-import { Article } from './types';
+import { AxiosResponse } from "axios";
+import { client } from "../../utils/client";
+import { Article } from "./types";
 
 export type GetResponse = AxiosResponse<{
   articles: Article[];

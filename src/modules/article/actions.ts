@@ -1,10 +1,10 @@
-import { Article } from './types';
+import { Article } from "./types";
 import {
   START_LOADING,
   STOP_LOADING,
   FETCH,
-  FETCH_SUCCESS,
-} from './actionTypes';
+  FETCH_SUCCESS
+} from "./actionTypes";
 
 export interface Actions {
   START_LOADING: { type: typeof START_LOADING };
@@ -19,14 +19,14 @@ export interface Actions {
 export type Action = Actions[keyof Actions];
 
 export const actions = {
-  startLoading: (): Actions['START_LOADING'] => ({ type: START_LOADING }),
-  stopLoading: (): Actions['STOP_LOADING'] => ({ type: STOP_LOADING }),
-  fetch: (limit: number = 10): Actions['FETCH'] => ({
+  startLoading: (): Actions["START_LOADING"] => ({ type: START_LOADING }),
+  stopLoading: (): Actions["STOP_LOADING"] => ({ type: STOP_LOADING }),
+  fetch: (limit: number = 10): Actions["FETCH"] => ({
     type: FETCH,
-    payload: limit,
+    payload: limit
   }),
-  fetchSuccess: (articles: Article[]): Actions['FETCH_SUCCESS'] => ({
+  fetchSuccess: (articles: Article[]): Actions["FETCH_SUCCESS"] => ({
     type: FETCH_SUCCESS,
-    payload: articles,
-  }),
+    payload: articles
+  })
 };

@@ -872,10 +872,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.3.tgz#8798d9e39af2fa604f715ee6a6b19796528e46c3"
   integrity sha512-/gwCgiI2e9RzzZTKbl+am3vgNqOt7a9fJ/uxv4SqYKxenoEDNVU3KZEadlpusWhQI0A0dOrZ0T68JYKVjzmgdQ==
 
-"@types/node@10.12.1":
-  version "10.12.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.1.tgz#da61b64a2930a80fa708e57c45cd5441eb379d5b"
-  integrity sha512-i1sl+WCX2OCHeUi9oi7PiCNUtYFrpWhpcx878vpeq/tlZTKzcFdHePlyFHVbWqeuKN0SRPl/9ZFDSTsfv9h7VQ==
+"@types/node@10.12.2":
+  version "10.12.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.2.tgz#d77f9faa027cadad9c912cd47f4f8b07b0fb0864"
+  integrity sha512-53ElVDSnZeFUUFIYzI8WLQ25IhWzb6vbddNp8UHlXQyU0ET2RhV5zg0NfubzU7iNMh5bBXb0htCzfvrSVNgzaQ==
 
 "@types/prop-types@*", "@types/prop-types@15.5.6":
   version "15.5.6"
@@ -968,6 +968,13 @@
   integrity sha512-7+H3+O8VX4Mx2HNdDLP1MSNoWp+FXfq3HDGc08kY5vxyuml7OAudO4CAQFsKsDvbU5spApJMZ6buEi/c3hKjtQ==
   dependencies:
     redux "^4.0.0"
+
+"@types/redux-saga@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@types/redux-saga/-/redux-saga-0.10.5.tgz#80bf21078379ebc97387dbe56e44467b5677fa85"
+  integrity sha1-gL8hB4N568lzh9vlbkRGe1Z3+oU=
+  dependencies:
+    redux-saga "*"
 
 "@types/styled-components@4.0.3":
   version "4.0.3"
@@ -8704,7 +8711,7 @@ redux-mock-store@1.5.3:
   dependencies:
     lodash.isplainobject "^4.0.6"
 
-redux-saga@0.16.2:
+redux-saga@*, redux-saga@0.16.2:
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
   integrity sha512-iIjKnRThI5sKPEASpUvySemjzwqwI13e3qP7oLub+FycCRDysLSAOwt958niZW6LhxfmS6Qm1BzbU70w/Koc4w==

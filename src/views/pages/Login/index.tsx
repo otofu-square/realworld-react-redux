@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { translate, InjectedTranslateProps } from 'react-i18next';
+import * as React from "react";
+import { withNamespaces, WithNamespaces } from "react-i18next";
 
-type Props = InjectedTranslateProps;
+type Props = WithNamespaces;
 
 export const Component = ({ t }: Props) => (
   <div className="auth-page">
@@ -10,7 +10,7 @@ export const Component = ({ t }: Props) => (
         <div className="col-md-6 offset-md-3 col-xs-12">
           <h1 className="text-xs-center">Sign In</h1>
           <p className="text-xs-center">
-            <a>{t('login.message')}</a>
+            <a>{t("login.message")}</a>
           </p>
           <form>
             <fieldset>
@@ -18,21 +18,21 @@ export const Component = ({ t }: Props) => (
                 <input
                   className="form-control form-control-lg"
                   type="email"
-                  placeholder={t('login.emailPlaceHolder')}
+                  placeholder={t("login.emailPlaceHolder")}
                 />
               </fieldset>
               <fieldset className="form-group">
                 <input
                   className="form-control form-control-lg"
                   type="password"
-                  placeholder={t('login.passwordPlaceHolder')}
+                  placeholder={t("login.passwordPlaceHolder")}
                 />
               </fieldset>
               <button
                 className="btn btn-lg btn-primary pull-xs-right"
                 type="submit"
               >
-                {t('login.signInLabel')}
+                {t("login.signInLabel")}
               </button>
             </fieldset>
           </form>
@@ -42,4 +42,4 @@ export const Component = ({ t }: Props) => (
   </div>
 );
 
-export const Login = translate()(Component);
+export const Login = withNamespaces()(Component);

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Article } from '@/modules/article';
+import * as React from "react";
+import { Article } from "../../../../modules/article";
 
 type Props = Article;
 
@@ -10,7 +10,7 @@ export const ArticlePreview = ({
   slug,
   title,
   description,
-  tagList,
+  tagList
 }: Props) => (
   <div className="article-preview">
     <div className="article-meta">

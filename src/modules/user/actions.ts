@@ -1,10 +1,10 @@
-import { User } from './types';
+import { User } from "./types";
 import {
   START_LOADING,
   STOP_LOADING,
   CREATE,
-  CREATE_SUCCESS,
-} from './actionTypes';
+  CREATE_SUCCESS
+} from "./actionTypes";
 
 export interface Actions {
   START_LOADING: { type: typeof START_LOADING };
@@ -25,14 +25,14 @@ export interface Actions {
 export type Action = Actions[keyof Actions];
 
 export const actions = {
-  startLoading: (): Actions['START_LOADING'] => ({ type: START_LOADING }),
-  stopLoading: (): Actions['STOP_LOADING'] => ({ type: STOP_LOADING }),
-  create: (email: string, password: string): Actions['CREATE'] => ({
+  startLoading: (): Actions["START_LOADING"] => ({ type: START_LOADING }),
+  stopLoading: (): Actions["STOP_LOADING"] => ({ type: STOP_LOADING }),
+  create: (email: string, password: string): Actions["CREATE"] => ({
     type: CREATE,
-    payload: { email, password },
+    payload: { email, password }
   }),
-  createSuccess: (user: User): Actions['CREATE_SUCCESS'] => ({
+  createSuccess: (user: User): Actions["CREATE_SUCCESS"] => ({
     type: CREATE_SUCCESS,
-    payload: user,
-  }),
+    payload: user
+  })
 };

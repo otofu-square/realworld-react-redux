@@ -1,15 +1,15 @@
-import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
-import * as api from './api';
-import { actions, Actions } from './actions';
-import { CREATE } from './actionTypes';
+import { all, call, fork, put, takeLatest } from "redux-saga/effects";
+import * as api from "./api";
+import { actions, Actions } from "./actions";
+import { CREATE } from "./actionTypes";
 
-function* create({ payload: { email, password } }: Actions['CREATE']) {
+function* create({ payload: { email, password } }: Actions["CREATE"]) {
   try {
     yield put(actions.startLoading());
     const response: api.CreateResponse = yield call(
       api.create,
       email,
-      password,
+      password
     );
     yield put(actions.createSuccess(response.data.user));
   } catch (e) {

@@ -1,17 +1,20 @@
-import * as React from 'react';
-import { translate, InjectedTranslateProps } from 'react-i18next';
-import { Banner } from './Banner';
-import { Sidebar } from './Sidebar';
-import { ArticleList } from './ArticleList';
-import { Article } from '@/modules/article';
+import * as React from "react";
+import { withNamespaces, WithNamespaces } from "react-i18next";
+import { Article } from "../../../../modules/article";
+import { Banner } from "./Banner";
+import { Sidebar } from "./Sidebar";
+import { ArticleList } from "./ArticleList";
 
 export type ViewProps = {
   articles: Article[];
   loading: boolean;
 };
+
 export type ActionProps = {};
+
 type Props = ViewProps & ActionProps;
-type ComposedProps = Props & InjectedTranslateProps;
+
+type ComposedProps = Props & WithNamespaces;
 
 const Component = ({ articles, loading, t }: ComposedProps) => (
   <div className="home-page">
@@ -36,4 +39,4 @@ const Component = ({ articles, loading, t }: ComposedProps) => (
   </div>
 );
 
-export const Home = translate()(Component);
+export const Home: React.ComponentType<Props> = withNamespaces()(Component);

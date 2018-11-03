@@ -1,25 +1,25 @@
-import * as React from 'react';
-import { branch, compose, renderComponent } from 'recompose';
-import { translate, InjectedTranslateProps } from 'react-i18next';
-import { ArticlePreview } from './ArticlePreview';
-import { Article } from '@/modules/article';
+import * as React from "react";
+import { branch, compose, renderComponent } from "recompose";
+import { withNamespaces, WithNamespaces } from "react-i18next";
+import { Article } from "../../../../modules/article";
+import { ArticlePreview } from "./ArticlePreview";
 
 type Props = {
   articles: Article[];
   loading: boolean;
 };
-type ComposedProps = Props & InjectedTranslateProps;
+type ComposedProps = Props & WithNamespaces;
 
 const isLoading = ({ articles }: Props) => !articles;
 
 const isEmpty = ({ articles }: Props) => articles.length === 0;
 
 const Loading = ({ t }: ComposedProps) => (
-  <div className="article-preview">{t('common.loading')}</div>
+  <div className="article-preview">{t("common.loading")}</div>
 );
 
 const Empty = ({ t }: ComposedProps) => (
-  <div className="article-preview">{t('article.empty')}</div>
+  <div className="article-preview">{t("article.empty")}</div>
 );
 
 const List = ({ articles }: Props) => (
@@ -31,7 +31,7 @@ const List = ({ articles }: Props) => (
 );
 
 export const ArticleList = compose<Props, Props>(
-  translate(),
+  withNamespaces(),
   branch(isLoading, renderComponent(Loading)),
-  branch(isEmpty, renderComponent(Empty)),
+  branch(isEmpty, renderComponent(Empty))
 )(List);
