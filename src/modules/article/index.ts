@@ -1,8 +1,12 @@
-export {
-  actions as articleActions,
-  Action as ArticleAction,
-  Actions as ArticleActions
-} from "./actions";
-export { reducer as articleReducer, State as ArticleState } from "./reducer";
-export { Article } from "./types";
+import { Action, Actions } from "./actions";
+import { State } from "./reducer";
+import { Article } from "./types";
+
+export type ArticleAction = Action;
+export type ArticleActions = Actions;
+export type ArticleState = State;
+export type Article = Article;
+
+export { actions as articleActions } from "./actions";
+export { reducer as articleReducer } from "./reducer";
 export { sagas as articleSagas } from "./sagas";

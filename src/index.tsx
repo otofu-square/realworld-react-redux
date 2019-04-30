@@ -8,11 +8,12 @@ import registerServiceWorker from "./registerServiceWorker";
 import { routes } from "./routes";
 import "./i18n";
 
-ReactDOM.render(
+const Root = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>{renderRoutes(routes)}</ConnectedRouter>
-  </Provider>,
-  document.getElementById("root") as HTMLElement
+  </Provider>
 );
+
+ReactDOM.render(<Root />, document.getElementById("root") as HTMLElement);
 
 registerServiceWorker();

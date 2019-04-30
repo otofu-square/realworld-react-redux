@@ -1,3 +1,3 @@
-export * from "./Home";
-export * from "./Login";
-export * from "./NotFound";
+export { Home } from "./Home";
+export { Login } from "./Login";
+export { NotFound } from "./NotFound";
