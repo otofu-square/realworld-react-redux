@@ -3,7 +3,7 @@ import { Article } from "../../../../modules/article";
 
 type Props = Article;
 
-export const ArticlePreview = ({
+export const ArticlePreview: React.FC<Props> = ({
   author,
   createdAt,
   favoritesCount,
@@ -11,7 +11,7 @@ export const ArticlePreview = ({
   title,
   description,
   tagList
-}: Props) => (
+}) => (
   <div className="article-preview">
     <div className="article-meta">
       <a>
@@ -32,13 +32,11 @@ export const ArticlePreview = ({
       <p>{description}</p>
       <span>Read more...</span>
       <ul className="tag-list">
-        {tagList.map(tag => {
-          return (
-            <li className="tag-default tag-pill tag-outline" key={tag}>
-              {tag}
-            </li>
-          );
-        })}
+        {tagList.map(tag => (
+          <li className="tag-default tag-pill tag-outline" key={tag}>
+            {tag}
+          </li>
+        ))}
       </ul>
     </a>
   </div>

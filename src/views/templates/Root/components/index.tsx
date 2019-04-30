@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Header } from "./Header";
 
-export type ViewProps = {
-  children: React.ReactNode;
-};
+export type ViewProps = {};
 
 export type ActionProps = {
   onLogoClick: () => void;
@@ -13,12 +11,12 @@ export type ActionProps = {
 
 type Props = ViewProps & ActionProps;
 
-export const Root = ({
+export const Root: React.FC<Props> = ({
   children,
   onLogoClick,
   onHomeClick,
   onLoginClick
-}: Props) => (
+}) => (
   <>
     <Header
       onLogoClick={onLogoClick}

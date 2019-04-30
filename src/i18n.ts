@@ -1,6 +1,6 @@
-import * as i18next from "i18next";
+import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { reactI18nextModule } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import { en, ja } from "./locales";
 
 const lngDetector = new LanguageDetector(null, {
@@ -12,7 +12,7 @@ const lngDetector = new LanguageDetector(null, {
 
 export const i18n = i18next
   .use(lngDetector)
-  .use(reactI18nextModule)
+  .use(initReactI18next)
   .init({
     fallbackLng: "ja",
     resources: {

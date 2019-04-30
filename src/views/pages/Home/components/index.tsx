@@ -1,5 +1,4 @@
 import * as React from "react";
-import { withNamespaces, WithNamespaces } from "react-i18next";
 import { Article } from "../../../../modules/article";
 import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar";
@@ -14,9 +13,7 @@ export type ActionProps = {};
 
 type Props = ViewProps & ActionProps;
 
-type ComposedProps = Props & WithNamespaces;
-
-const Component = ({ articles, loading, t }: ComposedProps) => (
+export const Home: React.FC<Props> = ({ articles, loading }) => (
   <div className="home-page">
     <Banner />
     <div className="container page">
@@ -38,5 +35,3 @@ const Component = ({ articles, loading, t }: ComposedProps) => (
     </div>
   </div>
 );
-
-export const Home: React.ComponentType<Props> = withNamespaces()(Component);

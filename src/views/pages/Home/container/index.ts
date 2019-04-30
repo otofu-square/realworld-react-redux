@@ -11,7 +11,7 @@ const mapStateToProps: MapStateToProps<ViewProps, {}, ReduxState> = ({
   loading
 });
 
-export const container = compose<ViewProps, ViewProps>(
+export const container = compose<ViewProps, {}>(
   connect(mapStateToProps),
   lifecycle<DispatchProp, {}, {}>({
     componentDidMount() {
