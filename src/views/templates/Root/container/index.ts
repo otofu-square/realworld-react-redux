@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
 import { push } from "react-router-redux";
 import { ViewProps, ActionProps } from "../components";
-import { ReduxState } from "../../../../types/redux";
+import { ReduxState } from "../../../../redux";
 
 type OwnProps = {
   children: React.ReactNode;

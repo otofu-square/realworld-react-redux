@@ -1,7 +1,7 @@
 import { compose, lifecycle } from "recompose";
 import { connect, MapStateToProps } from "react-redux";
 import { articleActions } from "../../../../modules/article";
-import { ReduxState, DispatchProp } from "../../../../types/redux";
+import { ReduxState, DispatchProp } from "../../../../redux";
 import { ViewProps } from "../components";
 
 const mapStateToProps: MapStateToProps<ViewProps, {}, ReduxState> = ({
