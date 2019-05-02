@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "connected-react-router": "6.4.0",
-    "formik": "1.5.4",
+    "formik": "2.0.1-alpha.2",
     "history": "4.9.0",
     "i18next": "15.1.0",
     "i18next-browser-languagedetector": "3.0.1",
