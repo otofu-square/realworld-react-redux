@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useTranslation } from "react-i18next";
-import { Article } from "../../../modules/article";
+import { Article } from "../../../modules/articles";
 import { ArticlePreview } from "./ArticlePreview";
 
 type Props = {
