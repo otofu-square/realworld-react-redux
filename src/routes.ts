@@ -1,7 +1,8 @@
 import { App } from "./App";
 import { Home, Login, NotFound } from "./views/pages";
+import { RouteConfig } from "react-router-config";
 
-export const routes = [
+export const routes: RouteConfig[] = [
   {
     component: App,
     routes: [

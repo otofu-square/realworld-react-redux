@@ -22,10 +22,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "isolatedModules": false
-  },
-  "paths": {
-    "@*": ["src*"]
+    "isolatedModules": true
   },
   "include": ["src/**/*"],
   "exclude": [
