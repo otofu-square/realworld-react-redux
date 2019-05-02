@@ -1,18 +1,18 @@
-import { AxiosResponse } from "axios";
-import { client } from "../../utils/client";
+import { apiClient } from "../../utils/apiClient";
 import { User } from "./types";
 
-export type CreateResponse = AxiosResponse<{
+type CreateResponse = {
   user: User;
-}>;
+};
 
 export const create = (email: string, password: string) =>
-  client.post<CreateResponse>(
-    `/users/login`,
-    JSON.stringify({
-      user: {
-        email,
-        password
+  apiClient
+    .post(`users/login`, {
+      json: {
+        user: {
+          email,
+          password
+        }
       }
     })
-  );
+    .json<CreateResponse>();

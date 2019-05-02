@@ -1,4 +1,4 @@
-import { User } from "./types";
+import { Article } from "./types";
 import { actionTypes } from "./actionTypes";
 import { CreatorsToActions } from "../../redux";
 
@@ -10,15 +10,15 @@ const stopLoading = () => ({
   type: actionTypes.STOP_LOADING
 });
 
-const createSuccess = (user: User) => ({
-  type: actionTypes.CREATE_SUCCESS,
-  payload: user
+const fetchSuccess = (articles: Article[]) => ({
+  type: actionTypes.FETCH_SUCCESS,
+  payload: articles
 });
 
 export const actions = {
   startLoading,
   stopLoading,
-  createSuccess
+  fetchSuccess
 };
 
 export type Actions = CreatorsToActions<typeof actions>;

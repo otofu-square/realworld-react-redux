@@ -4,7 +4,7 @@ import { useMount } from "react-use";
 import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar";
 import { ArticleList } from "./ArticleList";
-import { articleActions } from "../../../modules/article";
+import { articlesOperations } from "../../../modules/articles";
 import { ReduxState } from "../../../redux";
 
 export const Home: React.FC = () => {
@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
   const loading = useSelector((state: ReduxState) => state.article.loading);
 
   useMount(() => {
-    dispatch(articleActions.fetch());
+    dispatch(articlesOperations.fetch());
   });
 
   return (

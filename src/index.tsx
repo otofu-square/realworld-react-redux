@@ -4,16 +4,12 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import { store, history } from "./redux";
-import registerServiceWorker from "./registerServiceWorker";
 import { routes } from "./routes";
 import "./i18n";
 
-const Root = () => (
+ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>{renderRoutes(routes)}</ConnectedRouter>
-  </Provider>
+  </Provider>,
+  document.getElementById("root") as HTMLElement
 );
-
-ReactDOM.render(<Root />, document.getElementById("root") as HTMLElement);
-
-registerServiceWorker();

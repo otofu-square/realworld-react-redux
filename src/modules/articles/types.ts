@@ -1,3 +1,10 @@
+type Author = {
+  username: string;
+  bio: string | null;
+  image: string;
+  following: boolean;
+};
+
 export type Article = {
   title: string;
   slug: string;
@@ -6,12 +13,7 @@ export type Article = {
   updatedAt: string;
   tagList: string[];
   description: string;
-  author: {
-    username: string;
-    bio: string | null;
-    image: string;
-    following: boolean;
-  };
+  author: Author;
   favorited: boolean;
   favoritesCount: number;
 };

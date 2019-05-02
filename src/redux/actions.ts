@@ -1,5 +1,5 @@
 import { RouterAction } from "connected-react-router";
-import { ArticleAction } from "../modules/article";
-import { UserAction } from "../modules/user";
+import { ArticlesActions } from "../modules/articles";
+import { UserActions } from "../modules/user";
 
-export type ReduxAction = ArticleAction | UserAction | RouterAction;
+export type ReduxAction = ArticlesActions | UserActions | RouterAction;
