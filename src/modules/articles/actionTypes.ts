@@ -1,6 +1,6 @@
 export const actionTypes = {
-  START_LOADING: "article/START_LOADING",
-  STOP_LOADING: "article/STOP_LOADING",
-  FETCH: "article/FETCH",
-  FETCH_SUCCESS: "article/FETCH_SUCCESS"
+  START_LOADING: "articles/START_LOADING",
+  STOP_LOADING: "articles/STOP_LOADING",
+  FETCH: "articles/FETCH",
+  FETCH_SUCCESS: "articles/FETCH_SUCCESS"
 } as const;

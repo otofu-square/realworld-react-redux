@@ -22,6 +22,8 @@ export const reducer: Reducer<State> = (
       return { ...state, loading: true };
     case actionTypes.STOP_LOADING:
       return { ...state, loading: false };
+    case actionTypes.LOGIN_SUCCESS:
+      return { ...state, user: action.payload };
     case actionTypes.CREATE_SUCCESS:
       return { ...state, user: action.payload };
     default: {
