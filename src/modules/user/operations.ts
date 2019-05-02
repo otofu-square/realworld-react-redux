@@ -9,7 +9,7 @@ const create: Create = ({ email, password }) => async dispatch => {
   try {
     dispatch(actions.startLoading());
     const response = await api.create(email, password);
-    dispatch(actions.createSuccess(response.data.user));
+    dispatch(actions.createSuccess(response.user));
   } catch (e) {
     // @ts-ignore
   } finally {

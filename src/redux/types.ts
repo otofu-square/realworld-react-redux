@@ -1,4 +1,3 @@
-import { Dispatch as _Dispatch } from "redux";
 import { ThunkAction as _ThunkAction, ThunkDispatch } from "redux-thunk";
 import { ReduxAction as _ReduxAction } from "./actions";
 import { ReduxState as _ReduxState } from "./createRootReducer";

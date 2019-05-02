@@ -1,4 +1,4 @@
-import { client } from "../../utils/client";
+import { apiClient } from "../../utils/apiClient";
 import { Article } from "./types";
 
 type GetResponse = {
@@ -7,4 +7,4 @@ type GetResponse = {
 };
 
 export const get = (limit = 10) =>
-  client.get<GetResponse>(`/articles?limit=${limit}`);
+  apiClient.get(`articles?limit=${limit}`).json<GetResponse>();
