@@ -10,11 +10,6 @@ const stopLoading = () => ({
   type: actionTypes.STOP_LOADING
 });
 
-const create = (email: string, password: string) => ({
-  type: actionTypes.CREATE,
-  payload: { email, password }
-});
-
 const createSuccess = (user: User) => ({
   type: actionTypes.CREATE_SUCCESS,
   payload: user
@@ -23,7 +18,6 @@ const createSuccess = (user: User) => ({
 export const actions = {
   startLoading,
   stopLoading,
-  create,
   createSuccess
 };
 

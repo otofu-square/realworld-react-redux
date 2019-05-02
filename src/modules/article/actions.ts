@@ -10,11 +10,6 @@ const stopLoading = () => ({
   type: actionTypes.STOP_LOADING
 });
 
-const fetch = (limit: number = 10) => ({
-  type: actionTypes.FETCH,
-  payload: limit
-});
-
 const fetchSuccess = (articles: Article[]) => ({
   type: actionTypes.FETCH_SUCCESS,
   payload: articles
@@ -23,7 +18,6 @@ const fetchSuccess = (articles: Article[]) => ({
 export const actions = {
   startLoading,
   stopLoading,
-  fetch,
   fetchSuccess
 };
 

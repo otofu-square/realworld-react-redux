@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { Article } from "./types";
-import { Action } from "./actions";
-import { START_LOADING, STOP_LOADING, FETCH_SUCCESS } from "./actionTypes";
+import { Actions } from "./actions";
+import { actionTypes } from "./actionTypes";
 
 export type State = {
   articles: Article[];
@@ -15,16 +15,18 @@ const initialState = {
 
 export const reducer: Reducer<State> = (
   state = initialState,
-  action: Action
+  action: Actions
 ) => {
   switch (action.type) {
-    case START_LOADING:
+    case actionTypes.START_LOADING:
       return { ...state, loading: true };
-    case STOP_LOADING:
+    case actionTypes.STOP_LOADING:
       return { ...state, loading: false };
-    case FETCH_SUCCESS:
+    case actionTypes.FETCH_SUCCESS:
       return { ...state, articles: action.payload };
-    default:
+    default: {
+      const _: never = action;
       return state;
+    }
   }
 };
