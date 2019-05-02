@@ -1,4 +1,4 @@
-import { Action, Actions } from "./actions";
+import { Actions } from "./actions";
 import { State } from "./reducer";
 import { Article } from "./types";
 

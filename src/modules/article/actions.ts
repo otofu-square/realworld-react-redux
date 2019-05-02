@@ -1,32 +1,30 @@
 import { Article } from "./types";
-import {
-  START_LOADING,
-  STOP_LOADING,
-  FETCH,
-  FETCH_SUCCESS
-} from "./actionTypes";
+import { actionTypes } from "./actionTypes";
+import { CreatorsToActions } from "../../redux";
 
-export interface Actions {
-  START_LOADING: { type: typeof START_LOADING };
-  STOP_LOADING: { type: typeof STOP_LOADING };
-  FETCH: { type: typeof FETCH; payload: number };
-  FETCH_SUCCESS: {
-    type: typeof FETCH_SUCCESS;
-    payload: Article[];
-  };
-}
+const startLoading = () => ({
+  type: actionTypes.START_LOADING
+});
 
-export type Action = Actions[keyof Actions];
+const stopLoading = () => ({
+  type: actionTypes.STOP_LOADING
+});
+
+const fetch = (limit: number = 10) => ({
+  type: actionTypes.FETCH,
+  payload: limit
+});
+
+const fetchSuccess = (articles: Article[]) => ({
+  type: actionTypes.FETCH_SUCCESS,
+  payload: articles
+});
 
 export const actions = {
-  startLoading: (): Actions["START_LOADING"] => ({ type: START_LOADING }),
-  stopLoading: (): Actions["STOP_LOADING"] => ({ type: STOP_LOADING }),
-  fetch: (limit: number = 10): Actions["FETCH"] => ({
-    type: FETCH,
-    payload: limit
-  }),
-  fetchSuccess: (articles: Article[]): Actions["FETCH_SUCCESS"] => ({
-    type: FETCH_SUCCESS,
-    payload: articles
-  })
+  startLoading,
+  stopLoading,
+  fetch,
+  fetchSuccess
 };
+
+export type Actions = CreatorsToActions<typeof actions>;
