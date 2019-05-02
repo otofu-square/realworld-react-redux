@@ -7,7 +7,7 @@ type CreateResponse = {
 
 export const create = (email: string, password: string) =>
   apiClient
-    .post(`users/login`, {
+    .post(`users/signin`, {
       json: {
         user: {
           email,

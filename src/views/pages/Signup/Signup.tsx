@@ -10,7 +10,7 @@ export const Signup: React.FC = () => {
   const { values, errors, handleChange } = useForm();
   const dispatch = useDispatch();
   const disabled = useSelector(() => false);
-  const onLoginButtonClick = useCallback(() => dispatch(push("/login")), [
+  const onSigninButtonClick = useCallback(() => dispatch(push("/signin")), [
     dispatch
   ]);
 
@@ -18,7 +18,7 @@ export const Signup: React.FC = () => {
     <Wrapper>
       <h1 className="text-xs-center">Sign Up</h1>
       <p className="text-xs-center">
-        <a onClick={onLoginButtonClick}>Have an account?</a>
+        <a onClick={onSigninButtonClick}>Have an account?</a>
       </p>
       <ErrorsList errors={errors} />
       <Form>

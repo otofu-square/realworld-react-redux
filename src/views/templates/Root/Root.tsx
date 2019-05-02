@@ -7,14 +7,14 @@ export const Root: React.FC = ({ children }) => {
   const dispatch = useDispatch();
   const onLogoClick = useCallback(() => dispatch(push("/")), [dispatch]);
   const onHomeClick = useCallback(() => dispatch(push("/")), [dispatch]);
-  const onLoginClick = useCallback(() => dispatch(push("/login")), [dispatch]);
+  const onSigninClick = useCallback(() => dispatch(push("/signin")), [dispatch]);
 
   return (
     <>
       <Header
         onLogoClick={onLogoClick}
         onHomeClick={onHomeClick}
-        onLoginClick={onLoginClick}
+        onSigninClick={onSigninClick}
       />
       {children}
     </>

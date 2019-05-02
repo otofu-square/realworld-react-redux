@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 
-export const Login: React.FC = () => {
+export const Signin: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="auth-page">
@@ -10,7 +10,7 @@ export const Login: React.FC = () => {
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign In</h1>
             <p className="text-xs-center">
-              <a>{t("login.message")}</a>
+              <a>{t("signin.message")}</a>
             </p>
             <form>
               <fieldset>
@@ -18,21 +18,21 @@ export const Login: React.FC = () => {
                   <input
                     className="form-control form-control-lg"
                     type="email"
-                    placeholder={t("login.emailPlaceHolder")}
+                    placeholder={t("signin.emailPlaceHolder")}
                   />
                 </fieldset>
                 <fieldset className="form-group">
                   <input
                     className="form-control form-control-lg"
                     type="password"
-                    placeholder={t("login.passwordPlaceHolder")}
+                    placeholder={t("signin.passwordPlaceHolder")}
                   />
                 </fieldset>
                 <button
                   className="btn btn-lg btn-primary pull-xs-right"
                   type="submit"
                 >
-                  {t("login.signInLabel")}
+                  {t("signin.signInLabel")}
                 </button>
               </fieldset>
             </form>

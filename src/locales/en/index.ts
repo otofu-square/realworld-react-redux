@@ -1,11 +1,11 @@
 import { common } from "./common";
 import { article } from "./article";
-import { login } from "./login";
+import { signin } from "./signin";
 
 export const en = {
   translation: {
     common,
     article,
-    login
+    signin
   }
 };
