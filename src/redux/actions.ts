@@ -1,4 +1,4 @@
-import { RouterAction } from "react-router-redux";
+import { RouterAction } from "connected-react-router";
 import { ArticleAction } from "../modules/article";
 import { UserAction } from "../modules/user";
 

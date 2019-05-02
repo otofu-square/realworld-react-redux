@@ -1,7 +1,7 @@
 import * as React from "react";
 import { branch, compose, renderComponent } from "recompose";
 import { useTranslation } from "react-i18next";
-import { Article } from "../../../../modules/article";
+import { Article } from "../../../modules/article";
 import { ArticlePreview } from "./ArticlePreview";
 
 type Props = {
