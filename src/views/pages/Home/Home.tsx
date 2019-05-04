@@ -1,16 +1,15 @@
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useMount } from "react-use";
 import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar";
 import { ArticleList } from "./ArticleList";
 import { articlesOperations } from "../../../modules/articles";
-import { ReduxState } from "../../../redux";
+import { useDispatch, useSelector } from "../../../redux";
 
 export const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const articles = useSelector((state: ReduxState) => state.article.articles);
-  const loading = useSelector((state: ReduxState) => state.article.loading);
+  const articles = useSelector(state => state.article.articles);
+  const loading = useSelector(state => state.article.loading);
 
   useMount(() => {
     dispatch(articlesOperations.fetch());

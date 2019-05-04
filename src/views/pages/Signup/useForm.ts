@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import * as R from "ramda";
 import { push } from "connected-react-router";
 import { userOperations } from "../../../modules/user";
 import { useDispatch, useSelector } from "../../../redux";
@@ -17,28 +18,20 @@ const initialValues = {
 
 export const useForm = () => {
   const dispatch = useDispatch();
-  const { values, errors, setErrors, handleChange, handleSubmit } = useFormik<
-    Values
-  >({
+  const formik = useFormik<Values>({
     initialValues,
-    onSubmit: async (values: Values) => {
+    onSubmit: async (values, formikHelper) => {
       const errorResponse = await dispatch(userOperations.create(values));
-      if (errorResponse) {
-        setErrors({
-          username: errorResponse.errors.username.join(" "),
-          email: errorResponse.errors.email.join(" "),
-          password: errorResponse.errors.password.join(" ")
-        });
-      } else {
+      if (!errorResponse) {
         dispatch(push("/"));
+      } else {
+        const formattedErrors = R.mapObjIndexed(
+          R.join(", "),
+          errorResponse.errors
+        );
+        formikHelper.setErrors(formattedErrors);
       }
     }
   });
-
-  return {
-    values,
-    errors,
-    handleChange,
-    handleSubmit
-  };
+  return formik;
 };

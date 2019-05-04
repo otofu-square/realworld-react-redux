@@ -1,10 +1,9 @@
 import { push } from "connected-react-router";
 import React, { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Form } from "formik";
 import { useForm } from "./useForm";
 import { Wrapper } from "./Wrapper";
 import { ErrorsList } from "./ErrorsList";
+import { useDispatch, useSelector } from "../../../redux";
 
 export const Signup: React.FC = () => {
   const { values, errors, handleChange, handleSubmit } = useForm();
