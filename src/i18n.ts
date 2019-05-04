@@ -10,7 +10,7 @@ const lngDetector = new LanguageDetector(null, {
   caches: ["localStorage", "cookie"]
 });
 
-export const i18n = i18next
+export default i18next
   .use(lngDetector)
   .use(initReactI18next)
   .init({
