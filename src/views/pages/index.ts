@@ -1,3 +1,4 @@
 export { Home } from "./Home";
-export { Login } from "./Login";
+export { Signin } from "./Signin";
 export { NotFound } from "./NotFound";
+export { Signup } from "./Signup";

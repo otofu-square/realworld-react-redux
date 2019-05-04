@@ -6,7 +6,7 @@ export type ViewProps = {};
 export type ActionProps = {
   onLogoClick: () => void;
   onHomeClick: () => void;
-  onLoginClick: () => void;
+  onSigninClick: () => void;
 };
 
 type Props = ViewProps & ActionProps;
@@ -14,7 +14,7 @@ type Props = ViewProps & ActionProps;
 export const Header: React.FC<Props> = ({
   onLogoClick,
   onHomeClick,
-  onLoginClick
+  onSigninClick
 }) => {
   const { t } = useTranslation();
   return (
@@ -30,8 +30,8 @@ export const Header: React.FC<Props> = ({
             </div>
           </li>
           <li className="nav-item">
-            <div className="nav-link" onClick={onLoginClick}>
-              {t("common.login")}
+            <div className="nav-link" onClick={onSigninClick}>
+              {t("common.signin")}
             </div>
           </li>
         </ul>

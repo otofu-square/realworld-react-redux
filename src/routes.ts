@@ -1,5 +1,5 @@
 import { App } from "./App";
-import { Home, Login, NotFound } from "./views/pages";
+import { Home, Signin, NotFound, Signup } from "./views/pages";
 import { RouteConfig } from "react-router-config";
 
 export const routes: RouteConfig[] = [
@@ -12,8 +12,12 @@ export const routes: RouteConfig[] = [
         component: Home
       },
       {
-        path: "/login",
-        component: Login
+        path: "/signin",
+        component: Signin
+      },
+      {
+        path: "/signup",
+        component: Signup
       },
       {
         path: "*",

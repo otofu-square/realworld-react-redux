@@ -1,4 +1,4 @@
-export const login = {
+export const signin = {
   message: "アカウントが必要ですか？",
   emailPlaceHolder: "メールアドレス",
   passwordPlaceHolder: "パスワード",

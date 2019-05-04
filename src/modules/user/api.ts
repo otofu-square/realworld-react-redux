@@ -1,15 +1,40 @@
 import { apiClient } from "../../utils/apiClient";
 import { User } from "./types";
 
-type CreateResponse = {
+type LoginResponse = {
   user: User;
 };
 
-export const create = (email: string, password: string) =>
+export const login = (email: string, password: string) =>
   apiClient
     .post(`users/login`, {
       json: {
         user: {
+          email,
+          password
+        }
+      }
+    })
+    .json<LoginResponse>();
+
+type CreateResponse = {
+  user: User;
+};
+
+export type CreateErrorResponse = {
+  errors: {
+    username: string[];
+    email: string[];
+    password: string[];
+  };
+};
+
+export const create = (username: string, email: string, password: string) =>
+  apiClient
+    .post(`users`, {
+      json: {
+        user: {
+          username,
           email,
           password
         }

@@ -10,6 +10,11 @@ const stopLoading = () => ({
   type: actionTypes.STOP_LOADING
 });
 
+const loginSuccess = (user: User) => ({
+  type: actionTypes.LOGIN_SUCCESS,
+  payload: user
+});
+
 const createSuccess = (user: User) => ({
   type: actionTypes.CREATE_SUCCESS,
   payload: user
@@ -18,6 +23,7 @@ const createSuccess = (user: User) => ({
 export const actions = {
   startLoading,
   stopLoading,
+  loginSuccess,
   createSuccess
 };
 

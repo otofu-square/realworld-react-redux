@@ -7,11 +7,11 @@ const fetch: Fetch = () => async dispatch => {
   try {
     dispatch(actions.startLoading());
     const response = await api.get();
-    console.log(response);
     dispatch(actions.fetchSuccess(response.articles));
   } catch (e) {
-    // @ts-ignore
-    console.log(e);
+    // NOTE: catch error in view component
+    const errorResponse = await e.response.json();
+    return errorResponse;
   } finally {
     dispatch(actions.stopLoading());
   }

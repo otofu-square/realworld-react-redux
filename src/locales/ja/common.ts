@@ -3,5 +3,5 @@ export const common = {
   bannerMessage: "あなたの知識を共有するのにうってつけの場所です。",
   loading: "ロード中...",
   home: "ホーム",
-  login: "ログイン"
+  signin: "ログイン"
 };
