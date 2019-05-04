@@ -13,3 +13,4 @@ export type Dispatch = Dispatch;
 export type CreatorsToActions<T> = CreatorsToActions<T>;
 
 export { store, history } from "./store";
+export { useDispatch, useSelector } from "./hooks";
