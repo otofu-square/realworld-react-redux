@@ -7,7 +7,7 @@ import { Wrapper } from "./Wrapper";
 import { ErrorsList } from "./ErrorsList";
 
 export const Signup: React.FC = () => {
-  const { values, errors, handleChange } = useForm();
+  const { values, errors, handleChange, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const disabled = useSelector(() => false);
   const onSigninButtonClick = useCallback(() => dispatch(push("/signin")), [
@@ -21,7 +21,7 @@ export const Signup: React.FC = () => {
         <a onClick={onSigninButtonClick}>Have an account?</a>
       </p>
       <ErrorsList errors={errors} />
-      <Form>
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <fieldset className="form-group">
             <input
@@ -61,7 +61,7 @@ export const Signup: React.FC = () => {
             Sign up
           </button>
         </fieldset>
-      </Form>
+      </form>
     </Wrapper>
   );
 };

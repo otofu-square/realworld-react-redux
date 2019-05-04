@@ -21,6 +21,14 @@ type CreateResponse = {
   user: User;
 };
 
+export type CreateErrorResponse = {
+  errors: {
+    username: string[];
+    email: string[];
+    password: string[];
+  };
+};
+
 export const create = (username: string, email: string, password: string) =>
   apiClient
     .post(`users`, {

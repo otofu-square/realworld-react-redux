@@ -10,8 +10,11 @@ const login: Login = ({ email, password }) => async dispatch => {
     dispatch(actions.startLoading());
     const response = await api.login(email, password);
     dispatch(actions.loginSuccess(response.user));
+    return;
   } catch (e) {
-    // @ts-ignore
+    // NOTE: catch error in view component
+    const errorResponse = await e.response.json();
+    return errorResponse;
   } finally {
     dispatch(actions.stopLoading());
   }
@@ -23,14 +26,19 @@ type CreateProps = {
   password: string;
 };
 
-type Create = (_: CreateProps) => ThunkAction<Promise<void>>;
+type Create = (
+  _: CreateProps
+) => ThunkAction<Promise<void | api.CreateErrorResponse>>;
 const create: Create = ({ username, email, password }) => async dispatch => {
   try {
     dispatch(actions.startLoading());
     const response = await api.create(username, email, password);
     dispatch(actions.createSuccess(response.user));
+    return;
   } catch (e) {
-    // @ts-ignore
+    // NOTE: catch error in view component
+    const errorResponse: api.CreateErrorResponse = await e.response.json();
+    return errorResponse;
   } finally {
     dispatch(actions.stopLoading());
   }
