@@ -1,4 +1,3 @@
-import { App } from "./App";
 import { Home, Signin, NotFound, Signup } from "./views/pages";
 import { RouteConfig } from "react-router-config";
 

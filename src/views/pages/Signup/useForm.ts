@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import * as R from "ramda";
 import { push } from "connected-react-router";
 import { userOperations } from "../../../modules/user";
-import { useDispatch, useSelector } from "../../../redux";
+import { useDispatch } from "../../../redux";
 
 export type Values = {
   username: string;
