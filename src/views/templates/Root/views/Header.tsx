@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 
 export type ViewProps = {};
 
-export type ActionProps = {
+export type HandlerProps = {
   onLogoClick: () => void;
   onHomeClick: () => void;
   onSigninClick: () => void;
 };
 
-type Props = ViewProps & ActionProps;
+type Props = ViewProps & HandlerProps;
 
 export const Header: React.FC<Props> = ({
   onLogoClick,

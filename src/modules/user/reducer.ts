@@ -27,6 +27,7 @@ export const reducer: Reducer<State> = (
     case actionTypes.CREATE_SUCCESS:
       return { ...state, user: action.payload };
     default: {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _: never = action;
       return state;
     }

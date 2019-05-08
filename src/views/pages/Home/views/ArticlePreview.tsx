@@ -15,7 +15,7 @@ export const ArticlePreview: React.FC<Props> = ({
   <div className="article-preview">
     <div className="article-meta">
       <a>
-        <img src={author.image} />
+        <img src={author.image} alt={author.username} />
       </a>
       <div className="info">
         <a className="author">{author.username}</a>
