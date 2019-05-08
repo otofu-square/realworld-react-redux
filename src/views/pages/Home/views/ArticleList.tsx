@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Article } from "../../../modules/articles";
 import { ArticlePreview } from "./ArticlePreview";
 
-type Props = {
+export type Props = {
   articles: Article[];
   loading: boolean;
 };
