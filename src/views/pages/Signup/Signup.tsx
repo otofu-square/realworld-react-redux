@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { useForm } from "./useForm";
 import { Wrapper } from "./Wrapper";
 import { ErrorsList } from "./ErrorsList";
-import { useDispatch, useSelector } from "../../../redux";
+import { useDispatch, useSelector } from "~/redux";
 
 export const Signup: React.FC = () => {
   const { values, errors, handleChange, handleSubmit } = useForm();

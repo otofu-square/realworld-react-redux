@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { push } from "connected-react-router";
-import { useDispatch } from "../../../redux";
+import { useDispatch } from "~/redux";
 
 export const useHooks = () => {
   const dispatch = useDispatch();

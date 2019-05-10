@@ -1,5 +1,3 @@
-
-
 const path = require("path");
 const fs = require("fs");
 const url = require("url");
@@ -8,7 +6,6 @@ const url = require("url");
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
-
 const envPublicUrl = process.env.PUBLIC_URL;
 
 function ensureSlash(inputPath, needsSlash) {
@@ -38,32 +35,7 @@ function getServedPath(appPackageJson) {
   return ensureSlash(servedUrl, true);
 }
 
-const moduleFileExtensions = [
-  "web.mjs",
-  "mjs",
-  "web.js",
-  "js",
-  "web.ts",
-  "ts",
-  "web.tsx",
-  "tsx",
-  "json",
-  "web.jsx",
-  "jsx"
-];
-
-// Resolve file paths in the same order as webpack
-const resolveModule = (resolveFn, filePath) => {
-  const extension = moduleFileExtensions.find(extension =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
-  );
-
-  if (extension) {
-    return resolveFn(`${filePath}.${extension}`);
-  }
-
-  return resolveFn(`${filePath}.js`);
-};
+const moduleFileExtensions = ["mjs", "js", "ts", "tsx", "json", "jsx"];
 
 // config after eject: we're in ./config/
 module.exports = {
@@ -72,13 +44,13 @@ module.exports = {
   appBuild: resolveApp("build"),
   appPublic: resolveApp("public"),
   appHtml: resolveApp("public/index.html"),
-  appIndexJs: resolveModule(resolveApp, "src/index"),
+  appIndexJs: resolveApp("src/index.tsx"),
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
   appTsConfig: resolveApp("tsconfig.json"),
   appJsConfig: resolveApp("jsconfig.json"),
   yarnLockFile: resolveApp("yarn.lock"),
-  testsSetup: resolveModule(resolveApp, "src/setupTests"),
+  testsSetup: resolveApp("src/setupTests.ts"),
   proxySetup: resolveApp("src/setupProxy.js"),
   appNodeModules: resolveApp("node_modules"),
   publicUrl: getPublicUrl(resolveApp("package.json")),

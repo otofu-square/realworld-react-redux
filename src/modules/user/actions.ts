@@ -1,6 +1,6 @@
+import { CreatorsToActions } from "~/redux";
 import { User } from "./types";
 import { actionTypes } from "./actionTypes";
-import { CreatorsToActions } from "../../redux";
 
 const startLoading = () => ({
   type: actionTypes.START_LOADING
