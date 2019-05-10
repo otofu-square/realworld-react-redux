@@ -1,6 +1,6 @@
 import * as api from "./api";
 import { actions } from "./actions";
-import { ThunkAction } from "../../redux";
+import { ThunkAction } from "~/redux";
 
 type Fetch = () => ThunkAction<Promise<void>>;
 const fetch: Fetch = () => async dispatch => {

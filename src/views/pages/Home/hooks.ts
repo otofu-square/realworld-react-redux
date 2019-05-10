@@ -1,6 +1,6 @@
 import { useMount } from "react-use";
-import { articlesOperations } from "../../../modules/articles";
-import { useDispatch, useSelector } from "../../../redux";
+import { articlesOperations } from "~/modules/articles";
+import { useDispatch, useSelector } from "~/redux";
 
 export const useHooks = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import { Home, Signin, NotFound, Signup } from "./views/pages";
+import { Home, Signin, NotFound, Signup } from "~/views/pages";
 import { RouteConfig } from "react-router-config";
 
 export const routes: RouteConfig[] = [

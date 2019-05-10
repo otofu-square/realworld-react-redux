@@ -1,6 +1,6 @@
+import { ThunkAction } from "~/redux";
 import * as api from "./api";
 import { actions } from "./actions";
-import { ThunkAction } from "../../redux";
 
 type LoginProps = { email: string; password: string };
 
