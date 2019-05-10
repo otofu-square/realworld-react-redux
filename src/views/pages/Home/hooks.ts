@@ -1,4 +1,4 @@
-import { useMount } from "react-use";
+import useMount from "react-use/lib/useMount";
 import { articlesOperations } from "~/modules/articles";
 import { useDispatch, useSelector } from "~/redux";
 
